@@ -117,7 +117,7 @@
 
 	It is known that CPT-odd perturbations of a theory can effectively
 	replace two Sakharov's conditions for baryogenesis: violation of CP
-	invariance and the absence of thermal equilibrium.
+	invariance and the deviation from thermal equilibrium.
 	The main reason for this is that baryon asymmetry is present in the
 	equilibrium plasma due to the CPT-odd shifts of the dispersion relations
 	for baryons.
@@ -134,7 +134,8 @@
 	conserved.
 %such that B-violating processes 
 %	can proceed.
-	It is easy then to compute the equilibrium number density of baryons.
+%	It is easy then to compute the equilibrium number density of baryons.
+
 
 	CPT-odd baryogenesis has already been covered in the literature [Carrol,Kostelecky].
 	One of the important goals is to connect the observed BAU with the existing constraints
@@ -143,9 +144,11 @@
 	However, to present a more detailed numerical prediction for baryon asymmetry, 
 	one needs to take into consideration the kinetic equations for baryon number density,
 	as baryon-violating processes not always were in equilibrium.
-	We concentrate on CPT-odd interactions of mass dimension five.
-	Lower dimensional operators are in potential conflict with phenomenology, whereas
-	dimension five LV is claimed to be capable of producing the BAU.
+	We concentrate on CPT-odd interactions of mass dimension five, since
+	lower dimensional operators are in potential conflict with phenomenology and
+	effective field theory.
+%	Lower dimensional operators are in potential conflict with phenomenology, whereas
+%	dimension five LV is claimed to be capable of producing the BAU.
 	
 	The main direction of the present work is to consider generation of BAU via CPT-odd
 	leptogenesis.
@@ -171,7 +174,7 @@
 	
 
 	We examine closely the kinetic equations for the L-violating processes and argue that
-	the freeze-out temperature lies very close to the sphaleron ignition temperature, such
+	their freeze-out temperature lies very close to the sphaleron ignition temperature, such
 	that analysis of their simultaneous contributions is needed. 
 	We adjust the coupling constant $ \eta $ in \eqref{LV} in such a way as to produce 
 	the observed value of the baryon asymmetry and compare the results with the existing
@@ -386,26 +389,30 @@ where
 	The lepton asymmetry $ Y_L $ then can be expressed as
 \[
 	n_L ~~-~~ n_{\ov{L}} ~~\equiv~~ 2\, n_L^0 \cdot Y_L~,
-	\qquad\quad Y_L ~~=~~ \mu/T ~~-~~ 6\eta_L T~.
+	\qquad\quad Y_L ~~=~~ \mu/T ~~-~~ 6\,\eta_L T~.
 \]
 	
 	We also introduce dimensionless parameters $ \alpha $, 
 	$ \delta $ and $ \gamma $, by separating out the massive
 	parameters from the quantities entering the kinetic equation:
-\begin{align*}
-% first line
-&	 n_L^0 ~~=~~   \delta \cdot T^3~, \\
-% second line
-&	H     ~~=~~   \frac{T^2}{2\, \alpha\, \Mpl}~, \\
+%\begin{align*}
+%% first line
+%&	 n_L^0 ~~=~~   \delta \cdot T^3~, \\
+%% second line
+%&	H     ~~=~~   \frac{T^2}{2\, \alpha\, \Mpl}~, \\
 % third line
-&	4\, W_{LL} ~~+~~ W_{L\ov{H}} ~~=~~ 
-		 \gamma\, \frac{T^6}{M_R^2}~, \\
-% fourth line
-&	\lambda ~~\equiv~~  \frac{2\,\alpha\,\gamma}{\delta} ~.
-\end{align*}
-	The explicit values of the above constants are
-	$ \alpha  ~=~ 0.3\, g_*^{-1/2} $ and 
-	$ \delta  ~=~ g_L/\pi^2 $.
+%&	4\, W_{LL} ~~+~~ W_{L\ov{H}} ~~=~~ 
+%		 \gamma\, \frac{T^6}{M_R^2}~, \\
+%% fourth line
+%&	\lambda ~~\equiv~~  \frac{2\,\alpha\,\gamma}{\delta} ~.
+%\end{align*}
+\begin{equation*}
+	4\, W_{LL} ~~+~~ W_{L\ov{H}} ~~=~~ 
+		 \gamma\, \frac{T^6}{M_R^2}~.
+\end{equation*}
+%	The explicit values of the above constants are
+%	$ \alpha  ~=~ 0.3\, g_*^{-1/2} $ and 
+%	$ \delta  ~=~ g_L/\pi^2 $.
 %\begin{align*}
 %% first line
 %	\alpha & ~~=~~ 0.3\, g_*^{-1/2}~, \\
@@ -423,26 +430,31 @@ where
 \begin{equation}
 \label{btz_simple}
 	Y_L' ~~=~~ \frac{\lambda\,\Mpl}{M_R^2} \,
-			\lgr Y_L ~-~ \theta_L\, T \rgr~,
+			\lgr Y_L ~+~ 6\,\eta_L\, T \rgr~,
 \end{equation}
 	where the prime indicates differentiation with respect to
-	the temperature.
+	the temperature,
+	and we have introduced
+\[
+	\lambda ~~=~~ \frac{0.6\, \pi^2}
+    		         {g_*^{1/2}\, g_L}~.
+\]
 	
 	The general solution of \eqref{btz_simple} is
 \[
-	Y_L^{(\rm g)} ~~=~~ \frac{\theta_L\,M_R^2}{\lambda\,\Mpl}
-		~+~ \theta_L\,T ~+~
+	Y_L^{(\rm g)} ~~=~~ -\,\frac{6\,\eta_L\,M_R^2}{\lambda\,\Mpl}
+		~-~ 6\eta_L\,T ~+~
 		A\cdot e^{\frac{\lambda\, \Mpl}{M_R^2}\, T}~,
 \]
 	with an arbitrary constant $ A $.
 	Requiring $ Y_L $ to stay close to its equilibrium value 
-	$ \theta_L\, T $ at high temperatures one has to 
+	$ - 6\eta_L T $ at high temperatures one has to 
 % presume that 
 	put $ A = 0 $:
 \begin{equation}
 \label{btz_sol_simple}
-	Y_L ~~=~~ \frac{\theta_L\,M_R^2}{\lambda\,\Mpl}
-		~+~ \theta_L\,T ~
+	Y_L ~~=~~ -\,6\,\frac{\eta_L\,M_R^2}{\lambda\,\Mpl}
+		~-~ 6\eta_L\,T ~
 \end{equation}
 	(one might worry why we have been able to obtain a special
 	solution of equation \eqref{btz_simple} without essentially giving it
@@ -458,7 +470,7 @@ where
 	as well as with an estimate for the frozen number density
 \begin{equation}
 \label{Y_L_simple}
-	Y_L^{\rm fr} ~~\sim~~ \frac{\theta_L\,M_R^2}{\lambda\,\Mpl}~.
+	Y_L^{\rm fr} ~~\sim~~ -\, 6\,\frac{\eta_L\,M_R^2}{\lambda\,\Mpl}~.
 \end{equation}
 	This is of course the temperature at which the Hubble rate equals 
 	the L-process rate.
@@ -507,14 +519,14 @@ where
 	basis of $ B + L $ - and $ B - L $ -violating operators.
 	In this language, L-processes generate both  $ B + L $ and $ B - L $:
 \[
-	Y_{B-L} ~\simeq~ \frac 12 (\theta_B - \theta_L ) \cdot T_R~,\qquad
-	Y_{B+L} ~\simeq~ \frac 12 (\theta_B + \theta_L ) \cdot T_R~.
+	Y_{B-L} ~\simeq~ \frac 12 (\eta_B - \eta_L ) \cdot T_R~,\qquad
+	Y_{B+L} ~\simeq~ \frac 12 (\eta_B + \eta_L ) \cdot T_R~.
 \]	
 	Sphalerons then wash out $ Y_{B+L} $, yielding the BAU to be
-	$ \frac 12 (\theta_B - \theta_L ) \cdot T_R $.
-	Note that $ \theta_L $ gives the same contribution here as in the 
+	$ \frac 12 (\eta_B - \eta_L ) \cdot T_R $.
+	Note that $ \eta_L $ gives the same contribution here as in the 
 	first case.
-	Opposite to $ \theta_B $, which did not contribute in the first case
+	Opposite to $ \eta_B $, which did not contribute in the first case
 	due to the absence of B-flipping processes.
 	
 	The third case corresponds to $ \Tsph \approx T_R $.
@@ -581,20 +593,25 @@ where
 \end{equation}
 	where
 \[
-	\Gsph ~~\simeq~~ \frac{39}{4}\,\omega T~, \qquad\qquad 
+	\Gsph ~~\simeq~~ \omega\, T~, \qquad\qquad 
 	{\rm ~with~}
-	\omega ~~\simeq~~ \,10^{-6}~.
+	\omega ~\simeq~ \,10^{-5}~.
 \]
-	One then includes the account for the sphaleron rate \eqref{sph_corr}
-	into the kinetic equations \eqref{kinetic_eqn_prelim}.
-	Also, one has to add similar equations for the baryon density $ n_B $.
-	Instead of working with the measures of asymmetry $ Y_L $ and 
-	 $ Y_B $ it is technically more convenient to introduce the
-	deviation from equilibrium $ \Upsilon_{L,B} $:
-\[
-	\Upsilon_i ~~=~~ Y_i ~-~ \theta_i T ~~=~~ \mu_i/T~,
-	\qquad\qquad i~=~L,B~.
-\]
+%\[
+%	\Gsph ~~\simeq~~ \frac{39}{4}\,\omega T~, \qquad\qquad 
+%	{\rm ~with~}
+%	\omega ~~\simeq~~ \,10^{-6}~.
+%\]
+%	One then includes the account for the sphaleron rate \eqref{sph_corr}
+%	into the kinetic equations \eqref{kinetic_eqn_prelim}.
+%	Also, one has to add similar equations for the baryon density $ n_B $.
+%	Instead of working with the measures of asymmetry $ Y_L $ and 
+%	 $ Y_B $ it is technically more convenient to introduce the
+%	deviation from equilibrium $ \Upsilon_{L,B} $:
+%\[
+%	\Upsilon_i ~~=~~ Y_i ~-~ \theta_i T ~~=~~ \mu_i/T~,
+%	\qquad\qquad i~=~L,B~.
+%\]
 	(now that we are tracking both lepton and baryon numbers 
 	simultaneously, we have to explicitly indicate which quantites
 	are related to which sector, and therefore we will be appending
@@ -623,7 +640,7 @@ where
 \end{equation}
 	This is a purely technical simplification, since
 	the quantity of interest is the baryon asymmetry normalized on the
-	entropy density at the present time, which is still expressed
+	photon number density at the present time, which is still expressed
 	in terms of $ Y_B $,
 \begin{equation}
 \label{def_asy}
@@ -707,7 +724,7 @@ where
 	We have fixed the parameter $ M_R $ to be of the order of 
 	$ 10^{15}~\GeV $.
 	There is a parameter which is not strictly fixed,
-	the ``effective'' neutrino masses $ m_{\nu_i} $, which enter 
+	the ``effective'' neutrino mass $ m_{\nu_i} $, which enter 
 	through the
 	L-processes rate $ \gamma $,
 	and which we allow to vary within the limits 
@@ -752,7 +769,7 @@ where
 \end{figure}
 	
 	We expect the same to be true with the case of higher-dimensional
-	operators, and therefore make an estimate of resulting BAU through
+	operators, and therefore make an estimate of resulting BAU 
 	via equilibrium asymmetry.
 
 
@@ -833,11 +850,11 @@ where
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%                            CONCLUSION
+%                            DISCUSSION
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
+\section{Discussion}
 
 	We have seen that the presence of CPT-odd interactions is theoretically capable
 	of replacing \emph{two} of Sakharov's conditions of baryogenesis: non-conservation 
