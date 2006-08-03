@@ -123,8 +123,8 @@
 	for baryons.
 	That means that, as long as one has a CPT-odd model with baryons in equilibrium,
 	the BAU is guarranteed to be generated.
-	In some sense the problem of BAU becomes somewhat trivial: one only has
-	to add proper perturbations to the theory.
+%	In some sense the problem of BAU becomes somewhat trivial: one only has
+%	to add proper perturbations to the theory.
 	
 	One, however, still has the problem of B-nonconservation: to keep the plasma
 	in equilibrium one needs B-violating processes, which do not exist in the
@@ -138,7 +138,8 @@
 
 	CPT-odd baryogenesis has already been covered in the literature [Carrol,Kostelecky].
 	One of the important goals is to connect the observed BAU with the existing constraints
-	on LV interactions, which was ?partly? done in [Kostelecky]. 
+	on LV interactions.
+%, which was ?partly? done in [Kostelecky]. 
 	However, to present a more detailed numerical prediction for baryon asymmetry, 
 	one needs to take into consideration the kinetic equations for baryon number density,
 	as baryon-violating processes not always were in equilibrium.
@@ -149,8 +150,10 @@
 	The main direction of the present work is to consider generation of BAU via CPT-odd
 	leptogenesis.
 %	One of the attracting models of baryogenesis is leptogenesis.
-	In contrast with baryogenesis models, which as a rule require higher gauge groups 
-	and therefore involve much more new degrees of freedom, leptogenesis only
+	In contrast with baryogenesis models, 
+%which as a rule require higher gauge groups 
+%	and therefore 
+	which involve much more new degrees of freedom, leptogenesis only
 	requires heavy majorana neutrinos, which simultaneously provide small
 	masses for observed neutrinos.
 	We introduce CPT-odd interactions into the lepton sector of the Standard Model:
@@ -166,6 +169,29 @@
 	with one flavor of majorana neutrinos, whereas conventional leptogenesis requires
 	at least two of them [ref].
 	
+
+	We examine closely the kinetic equations for the L-violating processes and argue that
+	the freeze-out temperature lies very close to the sphaleron ignition temperature, such
+	that analysis of their simultaneous contributions is needed. 
+	We adjust the coupling constant $ \eta $ in \eqref{LV} in such a way as to produce 
+	the observed value of the baryon asymmetry and compare the results with the existing
+	limits on LV interactions. 
+	We argue that, the bounds on LV from observations of high energy cosmic rays renders
+	CPT-odd leptogenesis impossible for models with operators of mass dimension five \eqref{LV}, 
+	as well as for models with higher-dimensional operators.
+	
+%	{\it How did Kostelecky then obtained the observed BAU?}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%              REACTION RATES AND BOLTZMANN EQUATIONS     
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reaction rates and Boltzmann equations}
+
 	The major part of leptogenesis occurs when majorana neutrinos have decayed,
 	and only existed off-shell, mediating lepton number violating processes.
 	These processes maintain the equilibrium value for 
@@ -201,28 +227,6 @@
 	Sphaleron processes then convert the lepton abundance into the baryon asymmetry which
 	should have persisted up to now.
 
-	We examine closely the kinetic equations for the L-violating processes and argue that
-	the freeze-out temperature lies very close to the sphaleron ignition temperature, such
-	that analysis of their simultaneous contributions is needed. 
-	We adjust the coupling constant $ \eta $ in \eqref{LV} in such a way as to produce 
-	the observed value of the baryon asymmetry and compare the results with the existing
-	limits on LV interactions. 
-	We argue that, the bounds on LV from observations of high energy cosmic rays renders
-	CPT-odd leptogenesis impossible for models with operators of mass dimension five \eqref{LV}, 
-	as well as for models with higher-dimensional operators.
-	
-	{\it How did Kostelecky then obtained the observed BAU?}
-	
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%              REACTION RATES AND BOLTZMANN EQUATIONS     
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reaction rates and Boltzmann equations}
-
 \subsection{Simple kinetic equation}
 
 Introduction of the CPT-odd interactions leads to the modification of 
@@ -237,7 +241,7 @@ from zero to some small number
         n_L^\eq ~~=~~ \frac{g_L}{\pi^2 \beta^3}
 			\left (\, 1 ~-~ \frac{6\,\eta_L}{\beta} \,\right)~.
 \]
-By itself, this modification would not cause a non-zero lepton density
+By itself, this modification would not cause a non-zero lepton asymmetry
 of plasma. 
 However, much in accord with the standard leptogenesis scenario, the 
 effective interaction vertices of lepton and higgs fields,
@@ -268,9 +272,9 @@ Lepton-Higgs vertex, see Fig.~\ref{lflip_fig}.
 They generate the following processes relevant for leptogenesis:
 \begin{align}
 \notag
-	L~~+~~L ~~\rightarrow~~ H~~+~~H~  \\
+	L~~+~~L ~~\longleftrightarrow~~ H~~+~~H~  \\
 \notag
-	L~~+~~\ov{H} ~~\rightarrow~~ \ov{L}~~+~~H~,
+	L~~+~~\ov{H} ~~\longleftrightarrow~~ \ov{L}~~+~~H~,
 \end{align}
 together with their inverse processes, and with the same set of processes
 for antileptons.
@@ -278,7 +282,7 @@ However, since our CPT-odd interactions are T-invariant, the amplitudes for
 direct and inverse processes are equal, and we therefore have 
 only three different amplitudes, which we call  
 $ A_{LL} $, $ A_{\ov{LL}} $ and $ A_{LH} $.
-Denoting the corresponding reaction volumes by
+Denoting the corresponding reaction rates (per unit volume) by
 $ W_{LL} $, $ W_{\ov{LL}} $, $ W_{L\ov{H}} $ and $ \ov{W}_{L\ov{H}} $,
 where 
 \begin{align*}
@@ -327,14 +331,15 @@ where
 \right._{~.}
 \end{equation*}
 	The factor of two in the RHS here reflects that the LL processes
-	change the number of leptons by two ({\it Hmm... what about LH processes?}).
-	The first thing to note is that even though we could have introduced
-	a modification for the dispersion relations for the higgs, 
+	change the number of leptons by two.
+	The first thing to note is that even though we could have 
+	modified the dispersion relations for the higgs, 
 	its parameter would not enter the equations for the lepton number
-	density (just because the higgs equilibrium number density completely
-	dropped out of the right hand side of ...).
+	density.
+%(just because the higgs equilibrium number density completely
+%	dropped out of the right hand side of ...).
 	
-	Next we make the customary and a well-justified assumption of 
+	Next we make a well-justified assumption of 
 	smallness of the chemical potential for leptons,
 \[
 	\frac{n_L}{n_L^\eq} ~~=~~ e^{\mu/T} ~~\simeq~~ 1 ~~+~~ \mu/T~,
@@ -357,12 +362,15 @@ where
 \end{split}
 \end{equation}
 
-	Now we observe, that due to smallness of the chemical potential
-	any CPT-odd effects in the reaction rates can be neglected.
+	Now we observe that due to smallness of the chemical potential
+	any CPT-odd effects in the reaction rates in the RHS of 
+	\eqref{kinetic_eqn_prelim} can be neglected, as
+	they induce effects of 2nd order in the CPT-violating parameter.
 	There are two imaginable sources of CPT-odd contributions 
 	to the reaction rates: modified dispersion relations and 
 	CPT-odd modifications of Lepton-Higgs vertices. 
-	In our case, neither of them contribute, so we can take
+	Neglecting both of them, we can take
+%	In our case, neither of them contribute, so we can take
 	$ W_{\ov{LL}} = W_{LL} $ and
 	$ \ov{W}_{L\ov{H}} = W_{L\ov{H}} $.
 
@@ -372,13 +380,13 @@ where
 	of the unmodified number density 
 	$ n_L^0 = g_L/\pi^2 \cdot T^3 $
 \[
-	n_{L,\ov{L}}^\eq ~~=~~ n_L^0\, \left(\, 1 ~\pm~ \theta_L T \,\right)~,
+	n_{L,\ov{L}}^\eq ~~=~~ n_L^0\, \left(\, 1 ~\mp~ 6\,\eta_L T \,\right)~.
 \]
-	where $ \theta_L = -6\, \eta_L $.
+%	where $ \theta_L = -6\, \eta_L $.
 	The lepton asymmetry $ Y_L $ then can be expressed as
 \[
 	n_L ~~-~~ n_{\ov{L}} ~~\equiv~~ 2\, n_L^0 \cdot Y_L~,
-	\qquad\quad Y_L ~~=~~ \mu/T ~~+~~ \theta_L T~.
+	\qquad\quad Y_L ~~=~~ \mu/T ~~-~~ 6\eta_L T~.
 \]
 	
 	We also introduce dimensionless parameters $ \alpha $, 
