@@ -202,14 +202,16 @@
 	The Lagrangian for heavy neutrinos looks as
 \begin{equation}
 	\mathcal{L}  ~~\supset~~ -\,\frac 12\, M_R\, \ov{N}N ~~+~~
-				Y\cdot \ov{L}HN ~~+~~  Y^\dagger\cdot \ov{N}H^\dagger L~,
+				h_a\cdot \ov{L}_aHN ~~+~~  
+				h_a^\dagger\cdot \ov{N}H^\dagger L_a~,
 \end{equation}
-	where $ Y $ are Yukawa couplings.
+	where $ h_a $ are Yukawa couplings.
 	We switch to Weyl spinors for convenience, in which the Lagrangian can be rewritten as
 \begin{equation}
 	\mathcal{L}  ~~\supset~~ 
 	-\,\frac 12\, M_R\, \left( \lambda\lambda ~+~ \ov{\lambda\lambda} \right) ~~+~~
-				Y\cdot \ov{L\lambda}H ~~+~~  Y^\dagger\cdot H^\dagger \lambda L~,
+				h_a\cdot \ov{L_a\lambda}H ~~+~~  
+				h_a^\dagger\cdot H^\dagger \lambda L_a~,
 \end{equation}
 	where
 \[	
@@ -223,7 +225,7 @@
 	Integrating out the majorana neutrinos, one obtains an effective L-violating vertex:
 \begin{equation}
 \label{L_eff}
-	\mathcal{L}_{\rm eff} ~~=~~ \frac{Y^\dag Y^\dag}{2\, M_R} \, H^\dag L^\alpha H^\dag L_\alpha~.
+	\mathcal{L}_{\rm eff} ~~=~~ \frac{h_a^\dag h_b^\dag}{2\, M_R} \, H^\dag L_a^\alpha H^\dag L_{b\alpha}~.
 \end{equation}
 	This interaction induces L-violating processes which determine the lepton asymmetry
 	until the lepton freeze-out.
@@ -423,9 +425,10 @@ where
 	cross-sections of the lepton-number flipping processes
 	(see Fig.~\ref{lflip_fig}):
 \[
-	\gamma  ~~=~~ \frac{3}{2\pi^2}\, (N_g)^2\, |Y|^4~, \\
+%	\gamma  ~~=~~ \frac{3}{2\pi^2}\, (N_g)^2\, |Y|^4~, 
+	\gamma  ~~=~~ \frac{3}{2\pi^2}\, \lgr \sum |h_a|^2 \rgr^2~.
 \]
-	where $ N_g = 3 $ is the number of generations of leptons.
+%	where $ N_g = 3 $ is the number of generations of leptons.
 	Then the kinetic equation takes the simple form
 \begin{equation}
 \label{btz_simple}
@@ -612,39 +615,73 @@ where
 %	\Upsilon_i ~~=~~ Y_i ~-~ \theta_i T ~~=~~ \mu_i/T~,
 %	\qquad\qquad i~=~L,B~.
 %\]
-	(now that we are tracking both lepton and baryon numbers 
-	simultaneously, we have to explicitly indicate which quantites
-	are related to which sector, and therefore we will be appending
-	a subscript L or B where appropriate).
-	In terms of $ \Upsilon_{L,B} $
-	the kinetic equations can be written in a more symmetric way:
+%	(now that we are tracking both lepton and baryon numbers 
+%	simultaneously, we have to explicitly indicate which quantites
+%	are related to which sector, and therefore we will be appending
+%	a subscript L or B where appropriate).
+%	In terms of $ \Upsilon_{L,B} $
+%	the kinetic equations can be written in a more symmetric way:
+
+	One then includes the account for the sphaleron rate \eqref{sph_corr}
+	into the kinetic equations \eqref{kinetic_eqn_prelim}:
 \begin{equation}
 \label{eqn_ups}
 \left\{~~
 \begin{split}
 % first line
-	\delta_L \lgr \Upsilon_L' ~~+~~ \theta_L \rgr
+	g_L Y_L' 
 	& ~~\;=~~\;
-	2\, \alpha\chi \Mpl \cdot T^{-2} 
-	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
-	\;~~+~~\;
-	2\, \alpha\gamma\, \frac{\Mpl}{M_R^2} \cdot \Upsilon_L \\
+	\frac{0.6}{g_*^{1/2}}\, 
+	\frac{\omega\,\Mpl}{T^2}\,
+	\lgr g_L \{Y_L~+~6\,\eta_L\,T\} ~~+~~ 
+	     g_B \{Y_B~+~6\,\eta_B\,T\}  \rgr 
+	\;~~+
+	\\
 % second line
-	\delta_B \lgr \Upsilon_B' ~~+~~ \theta_B \rgr
+	& \;\phantom{~~+~~}\;  
+	\frac{0.6}{g_*^{1/2}}\, 
+	\frac{\gamma\,\Mpl}{M_R^2}\,
+	\cdot \{ Y_L ~+~ 6\,\eta_L\,T\}\\
+% third line
+	g_B Y_B' 
 	& ~~\;=~~\;
-	2\, \alpha\chi \Mpl \cdot T^{-2} 
-	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
+	\frac{0.6}{g_*^{1/2}}\, 
+	\frac{\omega\,\Mpl}{T^2}\,
+	\lgr g_L \{Y_L~+~6\,\eta_L\,T\} ~~+~~ 
+	     g_B \{Y_B~+~6\,\eta_B\,T\}  \rgr 
 	~~.
 \end{split}
 \right.
 \end{equation}
-	This is a purely technical simplification, since
-	the quantity of interest is the baryon asymmetry normalized on the
-	photon number density at the present time, which is still expressed
+
+%\begin{equation}
+%\label{eqn_ups}
+%\left\{~~
+%\begin{split}
+%% first line
+%	\delta_L \lgr \Upsilon_L' ~~+~~ \theta_L \rgr
+%	& ~~\;=~~\;
+%	2\, \alpha\chi \Mpl \cdot T^{-2} 
+%	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
+%	\;~~+~~\;
+%	2\, \alpha\gamma\, \frac{\Mpl}{M_R^2} \cdot \Upsilon_L \\
+%% second line
+%	\delta_B \lgr \Upsilon_B' ~~+~~ \theta_B \rgr
+%	& ~~\;=~~\;
+%	2\, \alpha\chi \Mpl \cdot T^{-2} 
+%	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
+%	~~.
+%\end{split}
+%\right.
+%\end{equation}
+%	This is a purely technical simplification, since
+	The quantity of interest is the baryon asymmetry normalized on the
+	photon number density at the present time, which can be expressed
 	in terms of $ Y_B $,
 \begin{equation}
 \label{def_asy}
 	\mathfrak{a}_B ~~=~~ 7.04\, \frac{45}{\pi^4}\, \frac{g_B}{g_*}\, Y_B
+	~~\simeq~~ Y_B 
 		~~\equiv~~ (\, 6.1 ~\pm~ 0.3 \,)\times 10^{-10}~.
 \end{equation}
 
