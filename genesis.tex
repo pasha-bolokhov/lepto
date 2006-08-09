@@ -29,7 +29,7 @@
 \newcommand{\Tfr}{T_{\rm fr}}
 \newcommand{\Tsph}{T_{\rm sph}}
 \newcommand{\Gsph}{\Gamma_{\rm sph}}
-\newcommand{\Lray}{\Lambda_{\rm ray}}
+\newcommand{\Eray}{E_{\rm ray}}
 
 \newcommand{\p}{\partial}
 \newcommand{\mc}[1]{\mathcal{#1}}
@@ -633,22 +633,22 @@ where
 	& ~~\;=~~\;
 	\frac{0.6}{g_*^{1/2}}\, 
 	\frac{\omega\,\Mpl}{T^2}\,
-	\lgr g_L \{Y_L~+~6\,\eta_L\,T\} ~~+~~ 
-	     g_B \{Y_B~+~6\,\eta_B\,T\}  \rgr 
+	\lgr g_L (\,Y_L~+~6\,\eta_L\,T\,) ~~+~~ 
+	     g_B (\,Y_B~+~6\,\eta_B\,T\,)  \rgr 
 	\;~~+
 	\\
 % second line
 	& \;\phantom{~~+~~}\;  
 	\frac{0.6}{g_*^{1/2}}\, 
 	\frac{\gamma\,\Mpl}{M_R^2}\,
-	\cdot \{ Y_L ~+~ 6\,\eta_L\,T\}\\
+	\cdot (\, Y_L ~+~ 6\,\eta_L\,T\,)\\
 % third line
 	g_B Y_B' 
 	& ~~\;=~~\;
 	\frac{0.6}{g_*^{1/2}}\, 
 	\frac{\omega\,\Mpl}{T^2}\,
-	\lgr g_L \{Y_L~+~6\,\eta_L\,T\} ~~+~~ 
-	     g_B \{Y_B~+~6\,\eta_B\,T\}  \rgr 
+	\lgr g_L (\,Y_L~+~6\,\eta_L\,T\,) ~~+~~ 
+	     g_B (\,Y_B~+~6\,\eta_B\,T\,)  \rgr 
 	~~.
 \end{split}
 \right.
@@ -840,46 +840,63 @@ where
 	
 	Observational bound on $ \eta^{(n)} $ can be obtained by a generalizations
 	of the Gagnon and Moore bounds [GM] on CPT-odd interactions.
-	Such bounds will, however, be directly applicable only to higher-dimensional operators
-	of the photon sector.
-	If there is a CPT-odd operator $ \xi^{(n)}_{\kappa\lambda\mu...} $ in the 
-	photon sector, it will modify dispersion relations of the photon similarly
-	to \eqref{disp_rel_n}, where the modification will have different signs
-	for photons of opposite polarizations.
-	Ultra-high energy cosmic rays would then be kinematically allowed to
-	emit photons and lose energy, and therefore not be observed.
-	Existence of rays with energy about $ \Lray ~\sim~ 3\times10^{11}~\GeV $ then 
-	puts a limit on $ \xi^{(n)} $:
+	If there is a CPT-odd operator in the lepton sector, it iwll modify dispersion
+	relations for the electron according to \eqref{disp_rel_n}.
+	Therefore, the ultra-high energy cosmic rays would be kinematically allowed to 
+	emit positron-electron pairs, and therefore not be observed.
+	Existence of rays with energy about $ \Eray ~\sim~ 3\times10^{11}~\GeV $ then 
+	puts a limit on $ \eta^{(n)} $:
 \begin{equation}
-\label{bound_xi_n}
-	\xi^{(n)} ~~<~~ 
-	2\, \left( \frac{m_p}{\Lray} \right)^2\, \left(\frac{2}{\Lray}\right)^{n-4}
-	~~=~~
-	\frac{2}{9}\, 10^{-22}\cdot 10^{-11(n-4)}~(\GeV)^{(4-n)}~.
+\label{bound_eta_n}
+	\eta^{(n)} ~~<~~ 
+	2^{n-3} \frac{m_p^2}{\Eray^{n-2}}~(\GeV)^{(4-n)}~.
 \end{equation}
-	We speculate that this limit, modulo loop factor, can be transferred on the 
-	fermionic sector, by arguing that the existence of  non-zero $ \xi^{(n)} $ 
-	should generate non-zero operator $ \eta^{(n)} $, which, in the absence of fine-tuning, 
-	should respect the same bound.
-
-	Substituting \eqref{bound_xi_n} into \eqref{Y_B_n} and then into 
+%	Such bounds will, however, be directly applicable only to higher-dimensional operators
+%	of the photon sector.
+%	If there is a CPT-odd operator $ \xi^{(n)}_{\kappa\lambda\mu...} $ in the 
+%	photon sector, it will modify dispersion relations of the photon similarly
+%	to \eqref{disp_rel_n}, where the modification will have different signs
+%	for photons of opposite polarizations.
+%	Ultra-high energy cosmic rays would then be kinematically allowed to
+%	emit photons and lose energy, and therefore not be observed.
+%	Existence of rays with energy about $ \Lray ~\sim~ 3\times10^{11}~\GeV $ then 
+%	puts a limit on $ \xi^{(n)} $:
+%\begin{equation}
+%\label{bound_xi_n}
+%	\xi^{(n)} ~~<~~ 
+%	2\, \left( \frac{m_p}{\Lray} \right)^2\, \left(\frac{2}{\Lray}\right)^{n-4}
+%	~~=~~
+%	\frac{2}{9}\, 10^{-22}\cdot 10^{-11(n-4)}~(\GeV)^{(4-n)}~.
+%\end{equation}
+%	We speculate that this limit, modulo loop factor, can be transferred on the 
+%	fermionic sector, by arguing that the existence of  non-zero $ \xi^{(n)} $ 
+%	should generate non-zero operator $ \eta^{(n)} $, which, in the absence of fine-tuning, 
+%	should respect the same bound.
+%
+	Substituting \eqref{bound_eta_n} into \eqref{Y_B_n} and then into 
 	\eqref{def_asy} one then obtains
+%\begin{align}
+%\notag
+%	\mathfrak{a}_B ~~<~~ 5 \times 10^{-22}\cdot \left [ \frac{T_R}{10^{11}~\GeV} 
+%							\right ]^{n-4}~.
+%	\\
+%\notag
+%	\text{\it Or is it better to have $\Eray$ instead of explicit numbers?}
+%\end{align}
 \begin{align}
 \notag
-	\mathfrak{a}_B ~~<~~ 5 \times 10^{-22}\cdot \left [ \frac{T_R}{10^{11}~\GeV} 
-							\right ]^{n-4}~.
-	\\
-\notag
-	\text{\it Or is it better to have $\Lray$ instead of explicit numbers?}
+	\mathfrak{a}_B ~~\simeq~~ Y_B
+	~~<~~ 
+		2^{n-5} (n\,-\,1)!\, \frac{m_p^2\, T_R^{n-4}}{\Eray^{n-2}}~.
 \end{align}
 
 	The condition that this asymmetry should reach the observed value then translates
 	into
 \[
-	n~~>~~9.5~.
+	n~~>~~X~.
 \]
 	Therefore, successful baryogenesis is only possible in the presence of LV operators
-	starting from dimension 11, which of course is rather 
+	starting from dimension XX, which of course is rather 
 % awkward and 
 	unnatural to assume.
 
@@ -946,7 +963,7 @@ where
 	higher-dimensional LV operators.
 	Arguments analogous to those of Gagnon and Moore allow one to exclude CPT-odd
 	leptogenesis due to operators up to mass dimension nine.
-	This, however, sounds convincing enough that, although equilibrium leptogenesis
+	This already sounds convincing enough that, although equilibrium leptogenesis
 	due to Lorentz violation is theoretically viable, phenomenologically it appears
 	to be impossible.
 
