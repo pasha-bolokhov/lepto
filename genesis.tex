@@ -123,53 +123,111 @@
 	equilibrium plasma due to the CPT-odd shifts of the dispersion relations
 	for baryons.
 	That means that, as long as one has a CPT-odd model with baryons in equilibrium,
-	the BAU is guarranteed to be generated.
+	a non-zero BAU will be generated.
 %	In some sense the problem of BAU becomes somewhat trivial: one only has
 %	to add proper perturbations to the theory.
 	
-	One, however, still has the problem of B-nonconservation: to keep the plasma
-	in equilibrium one needs B-violating processes, which do not exist in the
-	Standard Model.
-	There are well-known solutions to this problem which extend slightly beyond
-	the Standard Model, for example, into GUTs, where the baryon number is not
-	conserved.
+	There are certain problems related to CPT-odd baryogenesis.
+	If baryons were in thermal equilibrium down until the electroweak scale,
+	their asymmetry can be estimated by 
+\begin{equation}
+\label{baryo}
+	Y_B ~~=~~ \frac{\Delta B}{S} ~~\sim~~  \eta_B \, T_W~,
+\end{equation}
+	where $ S $ is the entropy, $ \eta_B $ is the parameter of CPT violation, 
+	and $ T_W \approx M_W $.
+	Experimental constraints suggest that $ \eta_B $ is extremely small and
+	therefore this scenario will not be capable of producing the observed asymmetry.
+
+	Another problem is that there must have been B-violating processes which kept
+	the plasma in equilibrium.
+	Since such processes do not exist in the Standard Model, one has to introduce
+	new degrees of freedom and interactions.
+	Typically, however, e.g. in the case of GUTs, the pre-generated baryon asymmetry
+	will be matched with the pre-generated lepton asymmetry, and therefore both
+	of them will be washed out by sphalerons, which poses another problem.
+
+	In general, a successful baryogenesis needs production of $ B - L $, but it does
+	not necessarily have to be a pure baryon number.
+	In particular, $ B - L $ is produced in scenarios of leptogenesis, where mainly
+	the lepton number is generated.
+	At energies $ \Tsph ~\sim~ 10^{12}~\GeV $ sphaleron processes become fast and 
+	diffuse $ B - L $ equally between leptons and baryons. 
+	One of the advantages of leptogenesis, is that one naturally introduces 
+	heavy majorana neutrinos, which simultaneously give mass to the light neutrinos
+	through Yukawa couplings.
+	These heavy neutrinos mediate lepton number violating processes, and thus keep
+	leptons in equilibrium down until the scale where the Hubble rate begins to dominate.
+	The rate of these processes should be inversely proportional to the mass squared
+	of the heavy particles $ M_R $.
+	The condition that this rate becomes of the order of the Hubble rate
+\[
+	\Gamma_L ~~\propto~~ \frac{T^3}{M_R^2} ~~\sim~~ H ~~\propto~~ \frac{T^2}{\Mpl}
+\]
+	gives us an estimate for the temperature of the freeze-out:
+\[
+	T_R ~~\propto~~ \frac{M_R^2}{\Mpl}~.
+\]
+	Therefore, in the scenarios of CPT-odd leptogenesis, one obtains the asymmetry
+	which freezes out at $ T = T_R $ rather than at $ T = M_W $:
+\[
+	Y_L ~~\sim~~ \eta_L\, \frac{M_R^2}{\Mpl}~.
+\]
+	Obviously, for 	$ M_R \sim 10^{15}~\GeV $ one gets a great enhancement 
+	by $ T_R \sim 10^{11}~\GeV $ over the CPT baryogenesis scenario \eqref{baryo}.
+
+%	One, however, still has the problem of B-nonconservation: to keep the plasma
+%	in equilibrium one needs B-violating processes, which do not exist in the
+%	Standard Model.
+%	There are well-known solutions to this problem which extend slightly beyond
+%	the Standard Model, for example, into GUTs, where the baryon number is not
+%	conserved.
 %such that B-violating processes 
 %	can proceed.
 %	It is easy then to compute the equilibrium number density of baryons.
 
 
-	CPT-odd baryogenesis has already been covered in the literature [Carrol,Kostelecky].
-	One of the important goals is to connect the observed BAU with the existing constraints
-	on LV interactions.
+	CPT-odd baryogenesis has already been covered in the literature 
+	[Carrol, Kostelecky, Zeldovich, Dolgov, Kaplan], and indicated as a capable
+	mechanism for baryon number generation.
+	However, one of the important goals is to connect the observed BAU with the existing 
+	constraints on LV interactions.
 %, which was ?partly? done in [Kostelecky]. 
-	However, to present a more detailed numerical prediction for baryon asymmetry, 
-	one needs to take into consideration the kinetic equations for baryon number density,
-	as baryon-violating processes not always were in equilibrium.
+%	It turns out that to present a detailed numerical prediction for baryon asymmetry, 
+%	However, to present a more detailed numerical prediction for baryon asymmetry, 
+%	one needs to take into consideration the kinetic equations for baryon number density,
+%	as baryon-violating processes not always were in equilibrium.
+	In the case of leptogenesis, 
+	it turns out that to present a numerical prediction for the asymmetry, 
+	one needs to take into consideration the kinetic equations for baryon and lepton
+	number densities, as lepton-violating processes not always were in equilibrium.
+
 	We concentrate on CPT-odd interactions of mass dimension five, since
 	lower dimensional operators are in potential conflict with phenomenology and
 	effective field theory.
 %	Lower dimensional operators are in potential conflict with phenomenology, whereas
 %	dimension five LV is claimed to be capable of producing the BAU.
-	
-	The main direction of the present work is to consider generation of BAU via CPT-odd
-	leptogenesis.
+%	
+%%	The main goal of the present work is to inspect the possibility of 
+%%	generation of the observed BAU via CPT-odd leptogenesis.
 %	One of the attracting models of baryogenesis is leptogenesis.
-	In contrast with baryogenesis models, 
+%	In contrast with baryogenesis models, 
 %which as a rule require higher gauge groups 
 %	and therefore 
-	which involve much more new degrees of freedom, leptogenesis only
-	requires heavy majorana neutrinos, which simultaneously provide small
-	masses for observed neutrinos.
-	We introduce CPT-odd interactions into the lepton sector of the Standard Model:
+%	which involve much more new degrees of freedom, leptogenesis only
+%	requires heavy majorana neutrinos, which simultaneously provide small
+%	masses for observed neutrinos.
+	We introduce CPT-odd operators into the lepton sector of the Standard Model:
 \begin{equation}
 \label{LV}
-	\mathcal{L}_{LV} ~~=~~ \eta^{\mu\nu\rho}\cdot \ov{L}\gamma_\mu \md_\nu \md_\rho L~.
+	\mathcal{L}_{LV} ~~=~~ \eta_L^{\mu\nu\rho}\cdot \ov{L}\gamma_\mu \md_\nu \md_\rho L~,
 \end{equation}
-	The zeroth component of the tensor $ \eta^{\mu\nu\rho} $, $ \eta^{000} \equiv \eta $ provides a 
+	so that the asymmetry is initially generated for the leptons.
+	The zeroth component of the tensor $ \eta_L^{\mu\nu\rho} $, $ \eta_L^{000} \equiv \eta_L $ provides a 
 	shift for the dispersion relations for leptons and antileptons, with different signs. 
 	Therefore, a surplus of particles over antiparticles is created when leptons are
 	in thermal equilibrium.
-	It is noteable, that such perturbations allow for successful leptogenesis already
+	It is noteable, that such CPT-odd perturbations allow for potential leptogenesis already
 	with one flavor of majorana neutrinos, whereas conventional leptogenesis requires
 	at least two of them [ref].
 	
@@ -180,11 +238,10 @@
 	We adjust the coupling constant $ \eta $ in \eqref{LV} in such a way as to produce 
 	the observed value of the baryon asymmetry and compare the results with the existing
 	limits on LV interactions. 
-	We argue that, the bounds on LV from observations of high energy cosmic rays renders
-	CPT-odd leptogenesis impossible for models with operators of mass dimension five \eqref{LV}, 
+	We argue that, the bounds on LV from observations of high energy cosmic rays, being
+	very strong, render CPT-odd leptogenesis impossible for models with operators of 
+	mass dimension five \eqref{LV}, 
 	as well as for models with higher-dimensional operators.
-	
-%	{\it How did Kostelecky then obtained the observed BAU?}
 	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,34 +253,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reaction rates and Boltzmann equations}
 
-	The major part of leptogenesis occurs when majorana neutrinos have decayed,
-	and only existed off-shell, mediating lepton number violating processes.
-	These processes maintain the equilibrium value for 
+	Lepton number violating processes mediated by majorana neutrinos 
+	freeze out at the temperatures well below $ M_R $, i.e. when the latter have decayed
+	and only existed off-shell.
+%	The major part of leptogenesis occurs when majorana neutrinos have decayed,
+%	and only existed off-shell, mediating lepton number violating processes.
+%	These processes maintain the equilibrium value for 
+	At $ T > T_R $ these processes maintain the equilibrium value for 
 	lepton number asymmetry. 
-	The Lagrangian for heavy neutrinos looks as
+	In these section we calculate the rate of L-processes, and include it
+	in the Boltzmann equations, together with the sphaleron rate.
+
+	The Lagrangian for heavy neutrinos reads as
 \begin{equation}
-	\mathcal{L}  ~~\supset~~ -\,\frac 12\, M_R\, \ov{N}N ~~+~~
-				h_a\cdot \ov{L}_aHN ~~+~~  
-				h_a^\dagger\cdot \ov{N}H^\dagger L_a~,
+	\mathcal{L}  ~~\supset~~ -\,\frac 12\, M_R\, \ov{N}{}_MN_M ~~+~~
+				h_a\cdot \ov{L}_aHN_M ~~+~~  
+				h_a^\dagger\cdot \ov{N}{}_MH^\dagger L_a~,
 \end{equation}
-	where $ h_a $ are Yukawa couplings.
+	where $ N_M $ are majorana neutrinos and $ h_a $ are the Yukawa couplings.
 	We switch to Weyl spinors for convenience, in which the Lagrangian can be rewritten as
 \begin{equation}
 	\mathcal{L}  ~~\supset~~ 
-	-\,\frac 12\, M_R\, \left( \lambda\lambda ~+~ \ov{\lambda\lambda} \right) ~~+~~
-				h_a\cdot \ov{L_a\lambda}H ~~+~~  
-				h_a^\dagger\cdot H^\dagger \lambda L_a~,
+	-\,\frac 12\, M_R\, \left( NN ~+~ \ov{N N} \right) ~~+~~
+				h_a\cdot \ov{L_a N}H ~~+~~  
+				h_a^\dagger\cdot H^\dagger N L_a~,
+%	-\,\frac 12\, M_R\, \left( \lambda\lambda ~+~ \ov{\lambda\lambda} \right) ~~+~~
+%				h_a\cdot \ov{L_a\lambda}H ~~+~~  
+%				h_a^\dagger\cdot H^\dagger \lambda L_a~,
 \end{equation}
 	where
 \[	
 	N  ~~=~~ \left\lgroup 
 		\begin{matrix}
-			\lambda_\alpha \\
-			\ov{\lambda}^{\dot{\alpha}}
+			N_\alpha \\
+			\ov{N}^{\dot{\alpha}}
 		\end{matrix}
 		\right\rgroup~.
 \]
-	Integrating out the majorana neutrinos, one obtains an effective L-violating vertex:
+	Integrating out the heavy neutrinos, one obtains an effective L-violating vertex:
 \begin{equation}
 \label{L_eff}
 	\mathcal{L}_{\rm eff} ~~=~~ \frac{h_a^\dag h_b^\dag}{2\, M_R} \, H^\dag L_a^\alpha H^\dag L_{b\alpha}~.
@@ -233,9 +300,9 @@
 	Sphaleron processes then convert the lepton abundance into the baryon asymmetry which
 	should have persisted up to now.
 
-\subsection{Simple kinetic equation}
+%\subsection{Simple kinetic equation}
 
-Introduction of the CPT-odd interactions leads to the modification of 
+Introduction of the CPT-odd interactions \eqref{LV} leads to the modification of 
 dispersion relations for leptons
 \[
 	E_L(p) ~~=~~ |\vec{p}| ~+~ \frac 12\, \eta_L\, \vec{p}^2~,
@@ -247,14 +314,16 @@ from zero to some small number
         n_L^\eq ~~=~~ \frac{g_L}{\pi^2 \beta^3}
 			\left (\, 1 ~-~ \frac{6\,\eta_L}{\beta} \,\right)~.
 \]
-By itself, this modification would not cause a non-zero lepton asymmetry
-of plasma. 
-However, as was discussed above, the 
-effective interaction vertex \eqref{L_eff} made possible
-for lepton number violating processes (L-processes from now on) to exist 
-at temperatures slightly below the majorana neutrino scale $ M $.
-When their rate was higher than the Hubble expansion rate, 
-these processes maintained the equilibrium of lepton number density.
+The heavy neutrino mediated processes discussed above maintain the equilibrium
+when their rate was higher than the Hubble expansion rate.
+%By itself, this modification would not cause a non-zero lepton asymmetry
+%of plasma. 
+%However, as was discussed above, the 
+%effective interaction vertex \eqref{L_eff} made possible
+%for lepton number violating processes (L-processes from now on) to exist 
+%at temperatures below the majorana neutrino scale $ M $.
+%When their rate was higher than the Hubble expansion rate, 
+%these processes maintained the equilibrium of lepton number density.
 At lower temperatures, the Hubble rate started to dominate, and the
 lepton-flipping processes were not fast enough to track the decrease
 of 
@@ -263,7 +332,7 @@ the temperature.
 As in standard baryogenesis, the frozen number density can be roughly
 estimated by evaluating the equilibrium density at the temperature
 of the freeze-out.
-A more detailed survey should involve the analysis of kinetic equations and
+A more detailed survey, however, should involve the analysis of kinetic equations and
 take into account the sphaleron rate.
 
 \begin{figure}
@@ -345,7 +414,8 @@ where
 %(just because the higgs equilibrium number density completely
 %	dropped out of the right hand side of ...).
 
-	One also has to deal with the sphaleron processes, which change
+	As already mentioned,
+	one also has to deal with the sphaleron processes, which change
 	both baryon and lepton number densities.
 	Therefore, the system \eqref{lepton_sys} has to be completed with
 	the equations for baryons.
