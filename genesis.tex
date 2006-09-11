@@ -238,9 +238,9 @@ the lepton-violating processes is through
 until the temperature decreases to the point where the Hubble rate begins to dominate
 over the lepton-violation rate.
 	In the assumption that Yukawa couplings are on the order $O(1)$, this moment in the Universe's 
-	history can be dermined as 
+	history can be determined as 
 \[
-	\Gamma_L ~~\propto~~ \frac{T^3}{M_R^2} ~~\sim~~ H ~~\propto~~ \frac{T^2}{\Mpl},
+	\Gamma_L ~~\propto~~ \frac{T^3}{M_R^2} ~~\sim~~ H_r ~~\propto~~ \frac{T^2}{\Mpl},
 \]
 	which gives an estimate for the temperature of the freeze-out for the $B-L$ number:
 \[
@@ -268,7 +268,7 @@ $B-L$ is zero \eqref{baryo}.
     
     The purpose of this paper is to explore the $CPT$-odd leptogenesis scenario, 
     determine the required strength of the $CPT$-violating operators, and confront it with the 
-    existing laboratory and strophysics constraints. 
+    existing laboratory and astrophysics constraints. 
 	%Despite some CPT-odd baryogenesis has already been covered in the literature 
 %\cite{Carroll:2005dj,Dolgov:1981hv,Dolgov:1991fr,Cohen:1987vi,Bertolami:1996cq},
 %	[Carroll, Kostelecky, Zeldovich, Dolgov, Kaplan], 
@@ -303,7 +303,7 @@ $B-L$ is zero \eqref{baryo}.
 \label{LV}
 	\mathcal{L}_{LV} ~~=~~ \sum_{i=L,E,Q,U,D}\eta_i^{\mu\nu\rho}\cdot \ov{\psi}_i\gamma_\mu \md_\nu \md_\rho \psi_i~,
 \end{equation}
-	which introduces an asymmetric shift into the dispersion relations of fermions and antifermions.
+	which causes an asymmetric shift of the dispersion relations for fermions and antifermions.
 	For example, a zeroth component of $ \eta_L^{\mu\nu\rho} $, $ \eta_L^{000} \equiv \eta_L $ provides a 
 	shift for the dispersion relations for leptons and antileptons, 
     and a surplus of particles over antiparticles is created when the lepton number violating processes  are
@@ -313,7 +313,7 @@ $B-L$ is zero \eqref{baryo}.
 	at least two of them \cite{Fukugita:1986hr}.
 	In the rest of this paper, we examine closely the kinetic equations for the 
     $L$($B$)-violating processes when $CPT$-odd shifts \eqref{LV}, lepton-number violation and 
-    sphaleron processes taken into account. 
+    sphaleron processes are taken into account. 
 	We adjust the coupling constants $ \eta $ in \eqref{LV} in such a way as to produce 
 	the observed value of the baryon asymmetry and compare the results with the existing
 	limits on Lorentz violating (LV) interactions. 
@@ -378,7 +378,7 @@ The mass term Lagrangian for heavy neutrinos reads as
 	\mathcal{L}_{\rm eff} ~~=~~ \frac{h_a^\dag h_b^\dag}{2\, M_R} \, H^\dag L_a^\alpha H^\dag L_{b\alpha}~.
 \end{equation}
 	Substituting the vacuum expectation value 
-for the Higgs filed in \eqref{L_eff}
+for the Higgs field in \eqref{L_eff}
 	creates a majorana mass term for light neutrinos. This interaction induces 
 L-violating processes which determine the lepton asymmetry
 	until the lepton freeze-out. 
@@ -469,20 +469,19 @@ where
 		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
 		| A_{L\ov{H}} |^2\, f_L^\eq(p)\, f_{\ov{H}}^\eq(q)~, \\
 % third line
-	W_{L\ov{H}}  ~~=~~  &
+	W_{LH}  ~~=~~  &
 		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
 		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
 		| A_{L\ov{H}} |^2\, f_{\ov{L}}^\eq(p)\, f_H^\eq(q)~, \\
 % fourth line
-	\ov{W}_{L\ov{H}}  ~~=~~  &
+	\ov{W}_{LH}  ~~=~~  &
 		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
 		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
-		| A_{LL} |^2\, f_{\ov{L}}^\eq(p)\, f_{\ov{L}}^\eq(q)~,
+		| A_{LL} |^2\, f_{\ov{L}}^\eq(p)\, f_{\ov{L}}^\eq(q)~
 \end{align*}
-	{\bf Pasha, if you write an equation, there should not be 
-any unexplained symbols hanging around}
-we can write the Boltzmann equations for the lepton number density
-	as
+	(here $ f_{L,H}^\eq(p) $ are equilibrium distribution functions for Higgs
+	and leptons),
+	we can write the Boltzmann equations for the lepton number density as
 \begin{equation}
 \label{lepton_sys}
 %\left\{~~
@@ -509,19 +508,35 @@ we can write the Boltzmann equations for the lepton number density
 	(the factor of two in the RHS here reflects the fact 
 	that the LL processes change the number of leptons by two).
 	An important thing to note is that even though we could have 
-	modified the dispersion relations for the Higgs filed, 
+	modified the dispersion relations for the Higgs field, 
 	its $CPT$-violating parameter would not enter the equations for the lepton number
 	density.
-%(just because the higgs equilibrium number density completely
-%	dropped out of the right hand side of ...).
+
+	Strictly speaking, Eqs.~\eqref{lepton_sys} only describe the evolution
+	of the weakly interating leptons. 
+	Obviously, for the purpose of leptogenesis, the equations for the total
+	lepton number, including right-handed particles, are needed.
+	We argue, however, that since the Yukawa interactions turning left-handed
+	and right-handed particles into each other are rapid, 
+	one can generalize the system \eqref{lepton_sys} for the 
+	evolution of the total lepton number density 
+\begin{equation}
+\label{n_L_total}
+	n_L  ~~=~~ n_\ell ~+~ n_E~
+\end{equation}
+	(here $ n_\ell $ is the number density of the left-handed leptons),
+	which has an effective $ CPT $-odd parameter 
+\[
+	\eta_L ~~=~~ \frac{ g_\ell \eta_\ell ~+~ g_E \eta_E } { g_\ell ~+~ g_E }~.
+\]
 
 	As already mentioned,
 	one also has to deal with the sphaleron processes, which change
 	both baryon and lepton number densities.
-	Therefore, the system \eqref{lepton_sys} has to be completed with
-	the equations for baryons.
 	The general effect of sphalerons is to partly wash-out $ B + L $,
 	while keeping $ B - L $ intact.
+	Therefore, the system \eqref{lepton_sys} has to be completed with
+	the equations for baryons.
 	For our purposes it will be sufficient to use the linear
 	temperature dependence approximation of the sphaleron rate
 \cite{Kuzmin:1985mm,Khlebnikov:1988sr}. 
@@ -542,16 +557,21 @@ we can write the Boltzmann equations for the lepton number density
 	{\rm ~with~}
 	\omega ~\simeq~ \,10^{-5}~.
 \]
-	{\bf Hubble and the Higgs field have the smae notation in our paper. 
-	Shall we change Higgs for h small, and yukawas for y small?} 
+	Here, similarly to \eqref{n_L_total}, $ n_B $ is the total baryon number density
+	$ n_B = \frac{1}{3}(n_Q + n_U + n_D) $, with a $ CPT $-odd parameter
+\[
+	\eta_B ~~=~~ \frac{g_Q \eta_Q ~+~ g_U \eta_U ~+~ g_D \eta_D} 
+			    {g_Q ~+~ g_U ~+~ g_D}~,
+\]
+	and effectively the equilibrium distribution for baryons has 
+	$ g_B \,\equiv\, \frac{1}{3}(g_Q + g_U + g_D) $.
 	
 	Next we make a well-justified assumption of 
 	smallness of the chemical potentials,
 \[
 	\frac{n_i}{n_i^\eq} ~~=~~ e^{\mu_i/T} ~~\simeq~~ 1 ~~+~~ \mu_i/T~,
 \]
-	which enables us now to linearize the equations in $ \mu_i $.
-
+	which enables us now to linearize the equations in $ \mu_i $.	
 	The kinetic equations for $ n_L $ now look as
 \begin{equation}
 \label{kinetic_eqn_prelim}
@@ -574,7 +594,9 @@ we can write the Boltzmann equations for the lepton number density
 \end{equation}
 	For the (anti)baryons the kinetic equations are the same except
 	that there are no contributions from the lepton number violating
-	rates. {\bf You need to explain that you also included baryon shifts as well here}
+	rates. 
+%	For the matter of generality, we assume that the dispersion
+%	relations for baryons include $ CPT $-odd shifts as well.
 
 	There are two possible sources for $CPT$-odd contributions 
 	to the reaction rates: modified dispersion relations and 
@@ -755,13 +777,13 @@ Q,L,U,D,E, and three different generations}
 	In accord with the standard leptogenesis, sphalerons diffuse
 	half of the lepton number yield into the baryon number
 \cite{Kuzmin:1985mm}, 
-	thus also rendering \eqref{Y_L_simple} an estimate for the BAU.
-{	\bf Why not 1/2?}
+	thus also rendering one half of the quantity on the right hand side
+	of Eq.~\eqref{Y_L_simple} an estimate for the BAU.
 	
 	This answer, however, was obtained under the assumption that
 	the sphaleron rate was much less than the rate of 
 	neutrino-mediated processes during the epoch of leptogenesis.
-	Generalizing, one notices that  there can be three different scenarios, 
+	In general, one notices that  there can be three different scenarios, 
 	depending on the relative magnitudes of $ T_R $ and $ \Tsph $, the 
 	temperature at which sphaleron processes become rapid.
 	The first case, when $ T_R \gg \Tsph $ has just been discussed
@@ -870,7 +892,7 @@ Q,L,U,D,E, and three different generations}
 	These bounds translate into the range of realistic values for the
 	freeze-out temperature:
 \[
-	10^{13}~\GeV ~~<~~ T_R ~~<~~ 10^{14}~\GeV~.
+	10^{12}~\GeV ~~<~~ T_R ~~<~~ 10^{14}~\GeV~.
 \]
 \[
 	[\textrm{\small approximately; I need to recalculate these.}]
@@ -890,7 +912,7 @@ Q,L,U,D,E, and three different generations}
 
 	To solve the system of kinetic equations, one also has to 
 	add proper initial conditions.
-	It is reasonable to impose the initial conditions at the temperatures
+	It is reasonable to impose these initial conditions at the temperatures
 	where the essential part of leptogenesis begins, which we
 	take to be $ M_R = 10^{15}~\GeV $.
 	At that time, leptons were in their equilibrium, which
@@ -1255,7 +1277,7 @@ Q,L,U,D,E, and three different generations}
 %\end{align}
 \begin{align}
 \notag
-	\mathfrak{a}_B ~~\simeq~~ Y_B
+	\mathfrak{a}_B ~~\simeq~~ 1.7 \, Y_B
 	~~<~~ 
 		2^{n-5} (n\,-\,1)!\, \frac{m_p^2\, T_R^{n-4}}{\Eray^{n-2}}~.
 \end{align}
