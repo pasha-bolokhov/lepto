@@ -102,7 +102,7 @@ ON, N2J 2W9, Canada}
 
 \centerline{\large\bf Abstract}
 
-We calculate the baryon asymmetry of the Universe resulting from the 
+We calculate the baryon asymmetry of the Universe resulting from 
 higher-dimensional Lorentz-noninvariant $CPT$-odd operators and heavy 
 Majorana neutrinos. Unlike the standard $CP$-odd scenario, the $CPT$-odd version of
 leptogenesis requires only one heavy Majorana neutrino, and the size of the 
@@ -577,14 +577,14 @@ where
 \label{kinetic_eqn_prelim}
 \begin{split}
 % first line
-	\Bigl\{ \p_t ~+~ 3H \Bigr\}
+	\lgr \p_t ~+~ 3H \rgr
 		n_L ~~=~~ & 
 	-\, \lgr 4\, W_{LL} ~+~ 2\, W_{L\ov{H}} \rgr  \mu_L/T 
 	~~-~~
 	\omega\, T \lgr \mu_L/T ~+~ \mu_B/T \rgr 
 	\\
 % second line
-	\Bigl\{ \p_t ~+~ 3H \Bigr\} 
+	\lgr \p_t ~+~ 3H \rgr
 		n_{\ov{L}} ~~=~~ &
 	\phantom{-\,}
 	\lgr 4\, W_{\ov{LL}} ~+~ 2\, \ov{W}_{L\ov{H}} \rgr  \mu_L/T 
@@ -707,11 +707,6 @@ where
 	~~\simeq~~ 0.6 \, Y_B 
 		~~\equiv~~ (\, 6.1 ~\pm~ 0.3 \,)\times 10^{-10}~.
 \end{equation}
-{\bf This is very confusing. I think we should normalize on entropy.
-Otherwise explain what gstar is}
-
-{\bf Also, we have to be careful how we combine $\eta_i$, as we can have many varianbles here, 
-Q,L,U,D,E, and three different generations} 
 
 	Note, that in the limit when the rate of sphaleron processes
 	is very small, $ \Gsph \ll \Gamma_L $ ($ \Gamma_L $ is the rate
@@ -879,8 +874,8 @@ Q,L,U,D,E, and three different generations}
 	value one has to apply the biggest estimates on the neutrino masses.
 	Thus one is interested in the highest of the lower limits on
 	$ \meff $.
-	In particular, $ \meff $ cannot be smaller then 
-	$ \sqrt{\Delta m_{\rm atm}^2}$:
+	In particular, $ \meff $ cannot be smaller then the atmospheric limit
+	on the neutrino mass difference $ \sqrt{\Delta m_{\rm atm}^2}$:
 \[
 	\meff ~~>~~ \sqrt{\Delta m_{\rm atm}^2} ~~\simeq~~ 0.05~\eV~.
 \]
@@ -893,9 +888,6 @@ Q,L,U,D,E, and three different generations}
 	freeze-out temperature:
 \[
 	10^{12}~\GeV ~~<~~ T_R ~~<~~ 10^{14}~\GeV~.
-\]
-\[
-	[\textrm{\small approximately; I need to recalculate these.}]
 \]
 	One now can compare these typical values of $ T_R $ with the 
 	sphaleron ignition temperature $ \Tsph $, which is estimated
@@ -1157,13 +1149,74 @@ Q,L,U,D,E, and three different generations}
 	L-processes rate $ \gamma $ (see Eq.~\eqref{gamma}),
 	and which we allow to vary within the limits 
 \[
-	0.05~\eV ~~<~~ \meff ~~<~~0.65~\eV~.
+	0.01~\eV ~~<~~ \meff ~~<~~1~\eV~.
+%	0.05~\eV ~~<~~ \meff ~~<~~0.65~\eV~.
 \]
-	Fig.~\ref{scan_fig} shows the dependence of $ \eta_L $ and 
-	$ \eta_B $ capable
-	of successful baryogenesis on the ``effective'' neutrino mass
-	$ \meff $.
-	As it was easily foreseen, although these numbers are quite
+	Fig.~\ref{b_dom_asymm_bau} shows the evolution of the baryon
+	asymmetry function $ Y_B $ (see Eq.~\eqref{def_asy}) in the case
+	$ \eta_b \neq 0 $, versus the equilibrium baryon asymmetry 
+	$ Y_B^{\eq} $.
+	Since one starts from zero asymmetry, function $ Y_B $ overshoots
+	the equilibrium curve, and not even starting to follow it, freezes out
+	at lower temperatures. 
+\begin{figure}
+\includegraphics[width=9cm,angle=270]{b_dom_asymm_bau.ps}
+\caption{Baryon asymmetry function $ Y_B $ and equilibrium baryon asymmetry vs 
+	temperature in the case of the LV in the baryon sector. 
+	The parameter $ \eta_B $ was chosen such as to produce the observed BAU 
+	\eqref{def_asy} at the freeze-out.}
+\label{b_dom_asymm_bau}
+\end{figure}
+
+	Similar picture for LV in the lepton-sector is shown 
+	in Fig.~\ref{l_dom_asymm_bau}.
+	The evolution starts from the equilibrium value of the (lepton)
+	asymmetry, and, depending on the freeze-out temperature $ T_R $,
+	$ Y_L $ follows the equilibrium curve for some time.
+	Due to this tracking of the equilibrium, the contribution of $ \eta_L $ 
+	to the final asymmetry is suppressed relative to the that produced by the same 
+	absolute value of $ \eta_B $.
+\begin{figure}
+\includegraphics[width=9cm,angle=270]{l_dom_asymm_bau.ps}
+\caption{
+	Lepton asymmetry vs temperature in the case of the LV in the lepton sector.
+	Similarly to Fig.~\ref{b_dom_asymm_bau}, the parameter $ \eta_L $ was fitted
+	to yield the observed value of baryon asymmetry.
+	Depending on $ \meff $, $ Y_L $ may follow the equilibrium for longer time.
+	For convenience of perception, the plot is presented upside-down.
+	}
+\label{l_dom_asymm_bau}
+\end{figure}
+
+	In Figs.~\ref{b_dom_asymm_bau}, \ref{l_dom_asymm_bau}, the LV parameters were
+	chosen such as to yield the observed BAU in the end. 
+	In general, their values depend 
+%on the freeze-out temperature, which in
+%	its turn depends on 
+	the effective neutrino mass $ \meff $.
+	Fig.~\ref{scan_fig} exhibits this dependence for a phenomenologically
+	viable range of $ \meff $, the most interesting region being that of
+	the small mass.
+	One notices that $ \eta_B $ does not change much in the ``physical'' region.
+	For $ \eta_L $-scenario, in contrast, 
+%	$ \meff $ defines the decoupling temperature
+	$ \meff $ is defining in terms of the decoupling temperature
+	and the production rate of asymmetry.
+	Thus, in different regions of the plot on Fig.~\ref{scan_fig}, $ \eta_L $
+	and $ \eta_B $ compete in production ``efficiency''.
+	At large values of $ \meff $, the $ \eta_L $-generated asymmetry 
+	(Fig.~\ref{l_dom_asymm_bau}) tracks the equilibrium curve for too long.
+	The $ \eta_B $-generated asymmetry 
+	(Fig.~\ref{b_dom_asymm_bau}), on the other hand, 
+	always overshoots the equilibrium, and as a result $ \eta_L $ loses
+	to $ \eta_B $ in efficiency.
+	In contrast, at small $ \meff $, $ Y_L $ wins by decoupling early 
+	from the ever-decreasing equilibrium value. 
+	The $ \eta_B $-scenario in this case is much less efficient due to large
+	freeze-out temperature $ T_R $.
+
+	Concluding the numerical analysis, we note that, as it was easily foreseen, 
+	although the required values of $ \eta_L $, $ \eta_B $ are quite
 	small, they are still many orders of magnitude larger than
 	current experimental bounds.
 \begin{figure}
@@ -1193,16 +1246,6 @@ Q,L,U,D,E, and three different generations}
 	detailed numerical answers, but it could not alter the fact that
 	dimension five operators are incapable of carrying out successful
 	baryogenesis.
-\begin{figure}
-\includegraphics[width=9cm,angle=270]{b_dom_asymm_bau.ps}
-\caption{Baryon asymmetry vs temperature in the case of the LV in the baryon sector, {\it should be modified a bit}}
-\label{b_dom_asymm_bau}
-\end{figure}
-\begin{figure}
-\includegraphics[width=9cm,angle=270]{l_dom_asymm_bau.ps}
-\caption{Lepton asymmetry vs temperature in the case of the LV in the lepton sector, {\it should be modified a bit}}
-\label{l_dom_asymm_bau}
-\end{figure}
 	We expect the same to be true with the case of higher-dimensional
 	operators, and therefore make an estimate of resulting BAU 
 	via equilibrium asymmetry.
@@ -1287,7 +1330,7 @@ Q,L,U,D,E, and three different generations}
 \notag
 	\mathfrak{a}_B ~~\simeq~~ 0.6 \, Y_B
 	~~<~~ 
-		2^{n-5} (n\,-\,1)!\, \frac{m_p^2\, T_R^{n-4}}{\Eray^{n-2}}~.
+		0.6 \times 2^{n-5} (n\,-\,1)!\, \frac{m_p^2\, T_R^{n-4}}{\Eray^{n-2}}~.
 \end{align}
 
 	The condition that this asymmetry should reach the observed value then translates
