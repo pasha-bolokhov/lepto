@@ -1,0 +1,1568 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt]{revtex4}
+%\documentclass[draft,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage{lscape} 
+\usepackage{color}
+\usepackage{graphicx,epsfig}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+%\usepackage{palatino}
+%\usepackage{chancery}
+%\usepackage{newcent}
+%\usepackage{charter}
+%\usepackage{zapfchan}
+%\usepackage{bookman}
+%\usepackage{sparticles}        %Package for displaying sparticle names. 
+%\usepackage{feynmf}            %Package for feynman diagrams. 
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\eq}{{\rm eq}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\Tfr}{T_{\rm fr}}
+\newcommand{\Tsph}{T_{\rm sph}}
+\newcommand{\Gsph}{\Gamma_{\rm sph}}
+\newcommand{\Eray}{E_{\rm ray}}
+\newcommand{\meff}{m^{\rm eff}_\nu}
+
+\newcommand{\p}{\partial}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\suc}{{\rm SU}_{\rm C}(3)}
+\newcommand{\sul}{{\rm SU}_{\rm L}(2)}
+\newcommand{\ue}{{\rm U}(1)}
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+%\newcommand{\su3}{{\rm SU}_{\rm C}(3)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+
+\begin{document}
+
+%%
+%% The title page
+%% 
+\begin{titlepage}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\setcounter{page}{1}
+
+\vspace*{0.2in}
+
+\begin{center}
+
+\hspace*{-0.6cm}\parbox{17.5cm}{\Large \bf \begin{center}
+$CPT$-odd Leptogenesis\end{center}}
+
+\vspace*{0.5cm}
+\normalsize
+
+
+{\bf Pavel Bolokhov$^{\,(a,b)}$ and Maxim Pospelov$^{\,(a,c)}$ }
+
+
+
+\smallskip
+\medskip
+
+$^{\,(a)}${\it Department of Physics and Astronomy, University of Victoria, \\
+     Victoria, BC, V8P 1A1 Canada} \\
+$^{\,(b)}${\it Theoretical Physics Department, St.Petersburg State University, Ulyanovskaya 1,
+        Peterhof, St.Petersburg, 198504, Russia}\\
+$^{\,(c)}${\it Perimeter Institute for Theoretical Physics, Waterloo,
+ON, N2J 2W9, Canada}
+
+\smallskip
+\end{center}
+\vskip0.2in
+
+
+\centerline{\large\bf Abstract}
+
+We calculate the baryon asymmetry of the Universe resulting from 
+the combination of higher-dimensional Lorentz-noninvariant $CPT$-odd operators and 
+dimension five operators that induce the majorana mass for neutrinos.
+The strength of $CPT$-violating dimension five operators
+capable of producing observed baryon asymmetry is directly 
+related to the observable neutrino masses and found to be in 
+the trans-Planckian range $(10^{-24}-10^{-22})~{\rm GeV}^{-1}$. Confronting it 
+with observational tests of 
+Lorentz symmetry, we find that this range of  Lorentz/$CPT$ violation 
+ is strongly disfavored by the combination of the low-energy constraints and astrophysical 
+data.  
+
+
+\vfil
+\leftline{October 2006}
+
+\end{titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                            INTRODUCTION
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{intro}
+
+%---	Sakharov's conditions
+%
+%---	reference to Kostelecky's paper
+%
+%---	Features of CPT-odd leptogenesis, including equilibrium distribution
+%
+%---	Leptogenesis epoch, sphaleron epoch
+%
+%---	unnecessity to having more than one heavy neutrinos
+%
+%---	Declare analysis of Boltzmann equations for operators of 
+%	dimension five, and general arguments for higher-dimensional
+%	operator
+%
+%---	Heavy neutrino interaction, effective lagrangian
+
+Since the seminal paper by Sakharov \cite{Sakharov:1967dj}, it is well known that the 
+baryon asymmetry of the Universe (BAU) can be generated dynamically, through the 
+combination of baryon number violating processes, $C$ and $CP$ violation, and the 
+departure from thermal equilibrium. It turns out that the Stadard Model (SM) has all necessary  
+ingredients for this to happen. Notably, the $B+L$ number is violated by the 
+high-temperature sphaleron processes \cite{Klinkhamer:1984di},\cite{Kuzmin:1985mm}. However, the 
+existing amount of $CP$-violation combined with tight constraints on the Higgs sector,
+prevent efficient baryogenesis in the SM. Thus, BAU presents a formidable hint on physics 
+beyond SM, and motivates new experimental searches for the extended 
+electroweak sector and new sources of $CP$ violation. 
+
+
+	It is also known for some time that $CPT$-odd perturbations can effectively
+	replace two Sakharov's conditions for baryogenesis: violation of $CP$
+	invariance and the deviation from thermal equilibrium \cite{Dolgov:1981hv}.
+	Indeed, a $CPT$-odd shift in the "mass" of a SM fermion (e.g. top quark \cite{Dolgov:1991fr}), 
+    $\Delta m_{CPT}$ 
+    would serve as an effective chemical shift between baryons and antibaryons above the 
+    scale of the electroweak phase transition. 
+    It is easy to see that $\Delta m_{CPT}/m_t\sim O(10^{-6})$ effect for top quark would be required to generate the 
+    observed asymmetry  \cite{Dolgov:1991fr}. Unfortunately, at the level of the Lagrangian 
+    is impossible to define a consistent 
+    "$CPT$-odd mass" without breaking the Lorentz invariance.  $CPT$-odd mass would have to be identified 
+with dimension three Lorentz-noninvariant operators \cite{Kost1}. Given the strength of
+	constraints on lower-dimensional $CPT$/Lorentz noninvariant operators \cite{Colladay:1998fq}, one 
+	has to conclude that lower dimensional operators 
+    cannot be a source of the observed baryon asymmetry. 
+
+    
+%To see the "equivalence" of $CP$-violation combined with non-equilibrium evolution and $CPT$-violation, 
+%5one can consider an example of the CP-odd operator composed from a scalar field coupled to the {\em e.g.} pseudoscalar combination 
+%of the 
+
+    
+	
+	%The main reason for this is that baryon asymmetry is present in the
+	%equilibrium plasma due to the CPT-odd shifts of the dispersion relations
+	%for baryons.
+	%That means that, as long as one has a CPT-odd model with baryons in equilibrium,
+	%a non-zero BAU will be generated.
+%	In some sense the problem of BAU becomes somewhat trivial: one only has
+%	to add proper perturbations to the theory.
+	
+	
+	
+	The problem of $CPT$-odd baryogenesis was readdressed in \cite{Bertolami:1996cq}
+and recently in \cite{Carroll:2005dj}, where among other options 
+higher-dimensional $CPT$-odd operators 
+were suggested as a source for baryon asymmetry. Suppose that a dimension five operator that 
+shifts the dispersion relations of baryons relative to antibaryons is added on top of the SM. 
+Let us furhter assume that initial value for $B-L$ is zero.
+Then in the temperature range from $10^{10}$ to $10^2$ GeV where the sphaleron processes are in thermal 
+equilibrium, the resulting baryon asymmetry will be determined by the amount of $CPT$ violation in the 
+theory. If $CPT$-violating interactions are given by dimension five interaction parametrized by $1/\Lambda_{CPT}$, the 
+inverse energy scale of $CPT$ violation, the resulting baryon 
+asymetry at the sphaleron freeze-out ($T\sim M_W$) will be given by 
+\begin{equation}
+\label{baryo}
+	Y_b ~~=~~ \frac{\Delta b}{s} ~~\sim~~ \frac{T_{min}}{\Lambda_{CPT}}~ \sim \frac{M_W}{\Lambda_{CPT}},
+\end{equation}
+	where $ s $ is the entropy. It is clear then that $\Lambda_{CPT} >10^{12}$ GeV will 
+	be required to produce an observable asymmetry. 
+Given the fact that both low-energy data and 
+	astrophysical constraints limit a typical scale $\Lambda_{CPT}$ to be higher than the Planck scale,
+	such scenario is completely ruled out. 
+
+
+%	Another problem is that there must have been B-violating processes which kept
+%	the plasma in equilibrium.
+%	Since such processes do not exist in the Standard Model, one has to introduce
+%	new degrees of freedom and interactions.
+%	Typically, however, e.g. in the case of GUTs, the pre-generated baryon asymmetry
+%	will be matched with the pre-generated lepton asymmetry, and therefore both
+%	of them will be washed out by sphalerons, which poses another problem.
+
+%	In general, a successful baryogenesis needs production of $ B - L $, but it does
+%	not necessarily have to be a pure baryon number.
+
+    In this paper we explore the idea of the $CPT$-odd leptogenesis that is capable of 
+    enhancing estimate (\ref{baryo}) by many orders of magnitude. 
+    The main feature of any leptogenesis scenario is the use of the lepton number non-conservation 
+    at high temperatures that results in a nonvanishing $ B - L $ 
+    number, that is preserved by sphaleron processes \cite{Fukugita:1986hr}. 
+	%At energies $ \Tsph ~\sim~ 10^{12}~\GeV $ sphaleron processes become fast and 
+	%diffuse $ B - L $ equally between leptons and baryons. 
+	One of the advantages of leptogenesis is that the most natural way of mediating
+the lepton-violating processes is through
+	heavy majorana neutrinos, which also supply masses to the light neutrinos
+	via the see-saw mechanism. 
+	Heavy right-handed neutrinos mediate lepton number violating processes, and thus keep
+	lepton number violating processes in equilibrium 
+until the temperature decreases to the point where the Hubble rate begins to dominate
+over the lepton-violation rate.
+	In the assumption that Yukawa couplings are on the order one, this moment in Universe's 
+	history can be determined as 
+\[
+	\Gamma_L ~~\propto~~ \frac{T^3}{M_R^2} ~~\sim~~ \Gamma_H ~~\propto~~ \frac{T^2}{\Mpl},
+\]
+	which gives an estimate for the temperature of the freeze-out for the $B-L$ number:
+\[
+	T_R ~~\propto~~ \frac{M_R^2}{\Mpl}~.
+\]
+	Therefore, in the scenarios of $CPT$-odd leptogenesis, one obtains the asymmetry
+	which freezes out at $ T = T_R $ rather than at $ T = M_W $:
+\[
+	Y_{l(b)} ~~\sim~~ \frac{M_R^2}{\Mpl\Lambda_{CPT}}~.
+\]
+	Obviously, for 	$ M_R \sim 10^{15}~\GeV $ one gets a great enhancement 
+	by $ T_R/M_W \sim 10^{9}$ over the $CPT$ baryogenesis scenarios  \eqref{baryo} where 
+$B-L$ is zero.
+
+%	One, however, still has the problem of B-nonconservation: to keep the plasma
+%	in equilibrium one needs B-violating processes, which do not exist in the
+%	Standard Model.
+%	There are well-known solutions to this problem which extend slightly beyond
+%	the Standard Model, for example, into GUTs, where the baryon number is not
+%	conserved.
+%such that B-violating processes 
+%	can proceed.
+%	It is easy then to compute the equilibrium number density of baryons.
+
+    
+    The purpose of this paper is to explore the $CPT$-odd leptogenesis scenario, 
+    determine the required strength of the $CPT$-violating operators, and confront it with the 
+    existing laboratory and astrophysics constraints. 
+	%Despite some CPT-odd baryogenesis has already been covered in the literature 
+%\cite{Carroll:2005dj,Dolgov:1981hv,Dolgov:1991fr,Cohen:1987vi,Bertolami:1996cq},
+%	[Carroll, Kostelecky, Zeldovich, Dolgov, Kaplan], 
+	%and indicated as a capable mechanism for baryon number generation.
+	%However, one of the important goals is to connect the observed BAU with the existing 
+	%constraints on LV interactions.
+%, which was ?partly? done in [Kostelecky]. 
+%	It turns out that to present a detailed numerical prediction for baryon asymmetry, 
+%	However, to present a more detailed numerical prediction for baryon asymmetry, 
+%	one needs to take into consideration the kinetic equations for baryon number density,
+%	as baryon-violating processes not always were in equilibrium.
+	%In the case of leptogenesis, 
+	%it turns out that to present a numerical prediction for the asymmetry, 
+	%one needs to take into consideration the kinetic equations for baryon and lepton
+	%number densities, as lepton-violating processes not always were in equilibrium.
+ For reasons explained earlier, we  concentrate on $CPT$-odd interactions of mass dimension five. 
+%	Lower dimensional operators are in potential conflict with phenomenology, whereas
+%	dimension five LV is claimed to be capable of producing the BAU.
+%	
+%%	The main goal of the present work is to inspect the possibility of 
+%%	generation of the observed BAU via CPT-odd leptogenesis.
+%	One of the attracting models of baryogenesis is leptogenesis.
+%	In contrast with baryogenesis models, 
+%which as a rule require higher gauge groups 
+%	and therefore 
+%	which involve much more new degrees of freedom, leptogenesis only
+%	requires heavy majorana neutrinos, which simultaneously provide small
+%	masses for observed neutrinos.
+	We introduce $CPT$-odd operators into the fermion sector of the Standard Model
+\cite{MP:}:
+\begin{equation}
+\label{LV}
+	\mathcal{L}_{LV} ~~=~~ \sum_{i=L,E,Q,U,D}\eta_i^{\mu\nu\rho}\cdot \ov{\psi}_i\gamma_\mu \md_\nu \md_\rho \psi_i~,
+\end{equation}
+[{\em Pasha, check the consistency of this sign with the change in disp relations}]
+	which causes an asymmetric shift of the dispersion relations for fermions and antifermions.
+	Here $\eta_i^{\mu\nu\rho}$ is a symmetric irreducible Lorentz violating spurion field, that 
+	can depend on the type of the SM fermions, and the summation extends over all 
+	fields that cary the lepton or baryon number. The transmutation to the lower-dimensional 
+	operators can be protected by the irreducibility condition, $\eta^{\mu\nu}_{~~\nu}=0$.
+	A zeroth component of $ \eta_i^{\mu\nu\rho} $, $ \eta_i^{000} \equiv \eta_i $ in the 
+reference frame where the primordial plasma is at rest provides 
+	an asymmetric shift in the dispersion relations for particles and antiparticles.
+    This way positive $\eta_{\rm lepton}$ creates a surplus of antileptons over leptons 
+    in equilibrium which is maintained when the rate for the
+lepton number violating processes is faster than the Hubble expansion.
+	It is notable, that such $CPT$-odd perturbations allow for potential leptogenesis already
+	with one flavor of heavy majorana neutrinos, whereas conventional leptogenesis requires
+	at least two of them \cite{Fukugita:1986hr}.
+	In the rest of this paper, we examine closely the kinetic equations for the 
+    $L$($B$)-violating processes when $CPT$-odd shifts \eqref{LV}, lepton-number violation and 
+    sphaleron processes are taken into account. 
+	We adjust the coupling constants $ \eta $ in \eqref{LV} in such a way as to produce 
+	the observed value of the baryon asymmetry and compare the results with the existing
+	limits on Lorentz violating (LV) interactions. 
+	We argue that the combination of bounds on LV from observations of high-energy cosmic rays
+\cite{Gagnon:2004xh} and the low-energy clock comparison experiments
+render the $CPT$-odd leptogenesis scenario fine-tuned  for models with operators of 
+	mass dimension five \eqref{LV}, but allow it for higher-dimensional operators.
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%              REACTION RATES AND BOLTZMANN EQUATIONS     
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reaction rates and Boltzmann equations}
+\label{rates}
+
+	To demonstrate how the $CPT$-odd leptogenesis works we consider a model with only one heavy 
+majorana neutrino. Its off-shell exchange mediates lepton number violating processes that 
+	freeze out at the temperatures well below $ M_R $.
+%	The major part of leptogenesis occurs when majorana neutrinos have decayed,
+%	and only existed off-shell, mediating lepton number violating processes.
+%	These processes maintain the equilibrium value for 
+	At $ T > T_R $ these processes maintain the equilibrium value for the
+	lepton number asymmetry. 
+	In this section we calculate the rate of the lepton number violating processes and include it
+	in the Boltzmann equations together with the sphaleron rate.
+	
+The mass term Lagrangian for heavy neutrinos reads as
+\begin{equation}
+	\mathcal{L}_m  ~~=~~ -\,\frac 12\, M_R\, \ov{N}{}_MN_M ~~+~~
+				h_a\cdot \ov{L}_aHN_M ~~+~~  
+				h_a^\dagger\cdot \ov{N}{}_MH^\dagger L_a~,
+\end{equation}
+	where $ N_M $ are singlet majorana neutrinos and $ h_a $ are the Yukawa couplings.
+	We switch to Weyl spinors for convenience, in which the Lagrangian can be rewritten as
+\begin{equation}
+	\mathcal{L}_m  ~~=~~ 
+	-\,\frac 12\, M_R\, \left( NN ~+~ \bar{N}\bar{N} \right) ~~+~~
+				h_i\cdot \bar{L_i}\bar{ N}H ~~+~~  
+				h_i^\dagger\cdot H^\dagger N L_i~,
+%	-\,\frac 12\, M_R\, \left( \lambda\lambda ~+~ \ov{\lambda\lambda} \right) ~~+~~
+%				h_a\cdot \ov{L_a\lambda}H ~~+~~  
+%				h_a^\dagger\cdot H^\dagger \lambda L_a~,
+\end{equation}
+	where index $i$ runs over three different generations, and
+\[	
+	N  ~~=~~ \left\lgroup 
+		\begin{matrix}
+			N_\alpha \\
+			\ov{N}^{\dot{\alpha}}
+		\end{matrix}
+		\right\rgroup~.
+\]
+	Integrating out the heavy neutrinos, one obtains an effective L-violating vertex:
+\begin{equation}
+\label{L_eff}
+	\mathcal{L}_{\rm eff} ~~=~~ \frac{Y_{ij}^\nu}{2\, M_R} \, H^\dag L_i^\alpha H^\dag L_{j\alpha}~
++{\rm h.c.},
+\end{equation}
+where $Y_{ij}^\nu=h_i^\dag h_j^\dag$.
+	Substituting the vacuum expectation value 
+for the Higgs field in \eqref{L_eff}
+	creates a majorana mass term for light neutrinos. 
+This interaction induces lepton number
+violating processes which determine the lepton asymmetry
+	until the lepton freeze-out. Alternatively, we could step by the stage with the heavy right-handed 
+	neutrinos and postulate \eqref{L_eff} as a starting point in our analysis while taking $Y^\nu_{ab}$
+	to be an arbitrary complex symmetric matrix . 
+	
+%	Sphaleron processes then convert the lepton abundance into the baryon asymmetry which
+%	should have persisted up to now. 
+
+%\subsection{Simple kinetic equation}
+
+Introduction of the $CPT$-odd interactions \eqref{LV} leads to the modification of 
+dispersion relations for the SM leptons and antileptons. Taking lepton doublets, we neglect
+the mass terms and find 
+\begin{equation}
+	E_L(p) ~~=~~ |\vec{p}| ~+~ \frac 12\, \eta_L\, \vec{p}^2~, ~~~ 
+E_{\bar L}(p) ~~=~~ |\vec{p}| ~-~ \frac 12\, \eta_L\, \vec{p}^2~.
+\label{modifiedE}
+\end{equation}
+%For simplicity, we consider $CPT$ violation only in the 
+%lepton doublet sector, noting that $\eta_E$ would lead to similar results.
+Equation \eqref{modifiedE} leads to a shift in the equilibrium number density of leptons
+\[
+        n_L^\eq ~~=~~ \frac{g_L}{\pi^2 \beta^3}
+			\left (\, 1 ~-~ \frac{6\,\eta_L}{\beta} \,\right)~,
+\]
+with the opposite sign of the shift for antileptons. Here $g_L$ is the total number of the spin, 
+gauge and flavor
+ degrees 
+of freedom associated with electrweak doublets $L$, and 
+$\beta$ is the inverse temperature. The difference,
+\begin{equation}
+\label{difference}
+n_i^\eq - n_{\bar i}^\eq =-12\,\eta_i g_i(\pi^2 \beta^4)^{-1}, ~~~i=L,
+\end{equation}
+represents an equilibrium lepton number 
+induced by $CPT$ violation in the lepton doublet sector. 
+%The heavy neutrino mediated processes discussed above maintain the equilibrium
+%when their rate dominates over the Hubble expansion rate.
+%By itself, this modification would not cause a non-zero lepton asymmetry
+%of plasma. 
+%However, as was discussed above, the 
+%effective interaction vertex \eqref{L_eff} made possible
+%for lepton number violating processes (L-processes from now on) to exist 
+%at temperatures below the majorana neutrino scale $ M $.
+%When their rate was higher than the Hubble expansion rate, 
+%these processes maintained the equilibrium of lepton number density.
+%At lower temperatures, the Hubble rate started to dominate, and the
+%lepton-flipping processes were not fast enough to track the decrease
+%of 
+%the equilibrium number density with 
+%the temperature. 
+As stated in the Introduction section, the final abundance can be roughly
+estimated by evaluating the equilibrium density at the temperature
+of the freeze-out.
+A more accurate answer, however, can be obtained by analyzing Boltzmann equations in the 
+presence of sphaleron processes and lepton number violation.
+
+\begin{figure}
+\includegraphics[width=9cm]{lflip.eps}
+\caption{$\Delta L=2$ processes generated by the effective vertex \eqref{L_eff}.}
+\label{lflip_fig}
+\end{figure}
+There are two types of interactions induced by the effective
+Lepton-Higgs vertex \cite{Luty:1992un,Plumacher:1996kc}, 
+%with $\Delta L =1$ and $\Delta L=2$, 
+shown in  Fig.~\ref{lflip_fig}.
+They generate the following processes relevant for leptogenesis:
+\begin{align}
+\notag
+	L~~+~~L ~~\longleftrightarrow~~ H~~+~~H~  \\
+\notag
+	L~~+~~H ~~\longleftrightarrow~~ \ov{L}~~+~~H~,
+\end{align}
+%together with their inverse processes, and 
+with the same set of processes
+for antileptons.
+However, since the relevant part of the $CPT$-odd interactions is time reversal invariant, 
+the amplitudes for
+direct and inverse processes are equal, and we therefore have 
+only three different amplitudes, which we call  
+$ A_{LL} $, $ A_{\ov{LL}} $ and $ A_{LH} $.
+Denoting the corresponding reaction rates (per unit volume) by
+$ W_{LL} $, $ W_{\ov{LL}} $, $ W_{L{H}} $ and $ \ov{W}_{L{H}} $,
+we have 
+\begin{align*}
+% first line
+	W_{LL}   ~~=~~  &
+		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
+		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
+		| A_{LL} |^2\, f_L^\eq(p)\, f_L^\eq(q)~, \\
+% second line
+	W_{\ov{LL}}   ~~=~~  &
+		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
+		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
+		| A_{\ov{LL}} |^2\, f_{\ov{L}}^\eq(p)\, f_{\ov{L}}^\eq(q)~, \\
+% third line
+	W_{LH}  ~~=~~  &
+		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
+		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
+		| A_{L{H}} |^2\, f_{{L}}^\eq(p)\, f_H^\eq(q)~, \\
+% fourth line
+	\ov{W}_{\ov{L}H}  ~~=~~  &
+		\int d\pi_p d\pi_q d\pi_k d\pi_r ~
+		(2\pi)^4~ \delta^4 ( p + q - k - r )\,
+		| A_{\ov{L}{H} }|^2\, f_{\ov{L}}^\eq(p)\, f_{H}^\eq(q)~,
+\end{align*}
+	where $ f_{L,H}^\eq(p) $ are the equilibrium distribution functions for Higgs fields
+	and lepton doublets.
+	In a toy model where only the lepton doublets and Higgs fields are present 
+    one can immediately write the Boltzmann equations for the lepton number density as
+\begin{equation}
+\label{lepton_sys}
+%\left\{  
+\begin{split}
+% first line
+	\lgr \p_t ~+~ 3\Gamma_H \rgr 
+		n_L ~~=~~ &
+	-\, 2\, W_{LL} \lgr \frac{n_L^2}{(n_L^\eq)^2} ~-~ 1 \rgr
+	~~-~~
+	W_{L\ov{H}} \lgr \frac{n_L}{n_L^\eq} ~-~ 
+			\frac{n_{\ov{L}}}{n_{\ov{L}}^\eq} \rgr  \\
+% second line
+	\lgr \p_t ~+~ 3\Gamma_H \rgr 
+		n_{\ov{L}} ~~=~~ &
+	-\, 2\, W_{\ov{LL}} \lgr 
+		\frac{n_{\ov{L}}^2}{(n_{\ov{L}}^\eq)^2} ~-~ 1 \rgr
+	~~-~~
+	\ov{W}_{L\ov{H}} \lgr \frac{n_{\ov{L}}}{n_{\ov{L}}^\eq} ~-~ 
+			\frac{n_L}{n_L^\eq} \rgr.  \\
+\end{split}
+%\right.
+%\right._{~.}
+\end{equation}
+	Here the Hubble rate is $\Gamma_H = \bf{\#\#} g_* T^2/M_{\rm Pl}$ in terms of the 
+total effective number of degrees of freedom $g_*$. 
+The factor of two in the RHS of \eqref{lepton_sys} reflects the fact 
+	that the LL processes change the number of leptons by two.
+	An important thing to note is that even though we could have 
+	modified the dispersion relations for the Higgs field, 
+	its $CPT$-violating parameter would not enter the equations for the lepton number
+	density.
+	
+	In order to generalize equations \eqref{lepton_sys} onto the full set of 
+	SM fields, we introduce the effective parameters of $CPT$ violation in the 
+	lepton and baryon sectors:
+\begin{equation}
+	\eta_l ~~=~~ \frac{ g_L \eta_L ~+~ g_E \eta_E } { g_L ~+~ g_E };~~~~~\eta_b ~~=~~ \frac{g_Q \eta_Q ~+~ g_U \eta_U ~+~ g_D \eta_D} 
+			    {g_Q ~+~ g_U ~+~ g_D}~,
+\label{effective}
+  \end{equation}
+where $g_i$ is the corresponding number of degrees of freedom in each sector. These parameters 
+enter \eqref{difference} with $i=l,b$, and $g_l = g_L +g_E $,  $g_b= g_Q+g_U+g_D$. 
+
+
+%	Eqs.~\eqref{lepton_sys} only describe the evolution
+%	of the weakly interating leptons. 
+%	Obviously, for the purpose of leptogenesis, the equations for the total
+%	lepton number, including right-handed particles, are needed.
+%	We argue, however, that since the Yukawa interactions turning left-handed
+%	and right-handed particles into each other are rapid, 
+%	one can generalize the system \eqref{lepton_sys} for the 
+%	evolution of the total lepton number density 
+%\begin{equation}
+%\label{n_L_total}
+%	n_l  ~~=~~ n_L ~+~ n_E~
+%\end{equation}
+%	(here $ n_l $ is the number density of the left-handed leptons),
+%	which has an effective $ CPT $-odd parameter 
+
+
+	As already mentioned,
+	one also has to include sphaleron processes, which affects 
+	one linear combination of baryon and lepton number densities.
+	The main effect of sphalerons is to wash-out $ B + L $,
+	while keeping $ B - L $ intact. A more detailed analysis 
+	shows that the wash-out is only partial, with the residual $B+L$ number
+	set by conserved $B-L$ (refs). 
+	Since the processes we consider occur far above the electroweak transition,  the sphaleron rate
+has linear
+	dependence on temperature 
+\cite{Kuzmin:1985mm,Khlebnikov:1988sr}. 
+	In the presence of $CPT$ violation, the sphaleron contribution to the Boltzmann equation
+	for $ n_l $, $ n_b $ 
+\cite{Kuzmin:1985mm,Moore:2000mx,Moore:2000ar} should be modified for the presence of the 
+equilibrium baryon and lepton numbers \eqref{difference}:
+\begin{equation}
+\label{sph_corr}
+	\p_t\, (n_b + n_l)
+	~~~=~~~ -\, \Gsph 
+		\lgr   n_b - n_b^\eq \;~+~\;
+		       n_l - n_l^\eq 
+		\rgr~,
+\end{equation}
+	where
+\[
+	\Gsph ~~\simeq~~ \omega\, T~, \qquad\qquad 
+	{\rm ~with~}
+	\omega ~\simeq~ \,10^{-5}~.
+\]
+%	Here, similarly to \eqref{n_L_total}, $ n_B $ is the total baryon number density
+%	$ n_B = \frac{1}{3}(n_Q + n_U + n_D) $, with a $ CPT $-odd parameter
+%\[
+%	\eta_B ~~=~~ \frac{g_Q \eta_Q ~+~ g_U \eta_U ~+~ g_D \eta_D} 
+%			    {g_Q ~+~ g_U ~+~ g_D}~,
+%\]
+%	and effectively the equilibrium distribution for baryons has 
+%	$ g_B \,\equiv\, \frac{1}{3}(g_Q + g_U + g_D) $.
+	
+	Next we make a well-justified assumption of 
+	smallness of the chemical potentials,
+\[
+	\frac{n_i}{n_i^\eq} ~~=~~ e^{\mu_i/T} ~~\simeq~~ 1 ~~+~~ \mu_i/T~,
+\]
+	which enables us to linearize kinetic equations in $ \mu_i $.	
+The kinetic equations for $ n_l$ takes the following form:
+\begin{equation}
+\label{kinetic_eqn_prelim}
+\begin{split}
+% first line
+	\lgr \p_t ~+~ 3\Gamma_H \rgr
+		n_l ~~=~~ & 
+	-\, \lgr 4\, W_{LL} ~+~ 2\, W_{L{H}} \rgr  \mu_l/T 
+	~~-~~
+	\omega\, T \lgr \mu_l/T ~+~ \mu_b/T \rgr 
+	\\
+% second line
+	\lgr \p_t ~+~ 3\Gamma_H \rgr
+		n_{\ov{l}} ~~=~~ &
+	\phantom{-\,}
+	\lgr 4\, W_{\ov{LL}} ~+~ 2\, \ov{W}_{L{H}} \rgr  \mu_l/T 
+	~~+~~
+	\omega\, T \lgr \mu_l/T ~+~ \mu_b/T \rgr ~.
+\end{split}
+\end{equation}
+[{\em Do I miss something or it appears that $W_{LL}$ are twice "better" than $W_{LH}$. This is 
+strange because both processes change the lepton number by 2}]
+
+
+	For the (anti)baryons the kinetic equations are the same except
+	that there are no contributions from the lepton number violating
+	rates. 
+%	For the matter of generality, we assume that the dispersion
+%	relations for baryons include $ CPT $-odd shifts as well.
+A significant simplification comes from the smallness of the chemical potential.
+	There are two possible sources for $CPT$-odd contributions 
+	to the reaction rates in \eqref{lepton_sys}, modified dispersion relations and 
+	$CPT$-odd modifications of thermal rates.  The smallness of $\mu_i/T$ allows to neglect 
+	any $CPT$-odd effects in the reaction rates in the RHS of 
+	\eqref{lepton_sys}, as
+	they induce effects of the 2nd order in the $CPT$-violating parameter. Therefore, 
+	%As we argued, one can neglect both of them, and take
+%	In our case, neither of them contribute, so 
+we take
+	$ W_{\ov{LL}} = W_{LL} $ and
+	$ \ov{W}_{L{H}} = W_{L{H}} $.
+
+	From the above equations we only need their difference, the actual
+	lepton (baryon) asymmetry.
+	For convenience, we express the equilibrium number density in terms
+	of the unmodified number density 
+	$ n_i^0 = g_i/\pi^2 \cdot T^3 $
+\[
+	n_{i,\ov{i}}^\eq ~~=~~ n_i^0\, \left(\, 1 ~\mp~ 6\,\eta_i T \,\right)~,
+	\qquad\qquad{i ~=~ l, b}~.
+\]
+%	where $ \theta_L = -6\, \eta_L $.
+	The asymmetries $ Y_i $ then can be defined as
+\[
+	n_i ~~-~~ n_{\ov{i}} ~~\equiv~~ 2\, n_i^0 \cdot Y_i~,
+	\qquad\quad Y_i ~~=~~ \mu_i/T ~~-~~ 6\,\eta_i T~.
+\]
+	We also introduce a dimensionless parameter $ \gamma $, 
+	by factoring out the dimensionful parameters $T^3/M_R^2$ from
+	the rate of lepton number violating processes,
+%\begin{align*}
+%% first line
+%&	 n_L^0 ~~=~~   \delta \cdot T^3~, \\
+%% second line
+%&	H     ~~=~~   \frac{T^2}{2\, \alpha\, \Mpl}~, \\
+% third line
+%&	4\, W_{LL} ~~+~~ W_{L\ov{H}} ~~=~~ 
+%		 \gamma\, \frac{T^6}{M_R^2}~, \\
+%% fourth line
+%&	\lambda ~~\equiv~~  \frac{2\,\alpha\,\gamma}{\delta} ~.
+%\end{align*}
+\begin{equation*}
+	4\, W_{LL} ~~+~~ 2\, W_{L\ov{H}} ~~=~~ 
+		 \gamma\, \frac{T^6}{M_R^2}~,
+\end{equation*}
+%	The explicit values of the above constants are
+%	$ \alpha  ~=~ 0.3\, g_*^{-1/2} $ and 
+%	$ \delta  ~=~ g_L/\pi^2 $.
+%\begin{align*}
+%% first line
+%	\alpha & ~~=~~ 0.3\, g_*^{-1/2}~, \\
+%% third line
+%	\delta & ~~=~~ \frac{g_L}{\pi^2}~.
+%\end{align*}
+%	The value of $ \gamma $ is determined by the explicit 
+%	cross-sections of the lepton-number flipping processes
+%	(see Fig.~\ref{lflip_fig}):
+so that $\gamma$ scales as the fourth power of the neutrino Yukawa couplings or the 
+sum of the squares of the eigenvalues of $Y_{ij}^\nu$. 
+\begin{equation}
+\label{gamma}
+%	\gamma  ~~=~~ \frac{3}{2\pi^2}\, (N_g)^2\, |Y|^4~, 
+	\gamma  ~~=~~ \frac{3}{2\pi^2}\, \lgr \sum |h_a|^2 \rgr^2 = \frac{3}{2\pi^2}\, {\rm Tr}~ (Y^\nu_{\rm diag}
+Y^{\nu\dagger}_{\rm diag})
+\end{equation}
+%	where $ N_g = 3 $ is the number of generations of leptons.
+
+	Expressing equations \eqref{kinetic_eqn_prelim} in terms of
+	$ Y_i $ and changing variables from time to temperature, we get:
+\begin{equation}
+\label{eqn_Y}
+%\left\{~~
+\begin{split}
+% first line
+	g_l \frac{d}{dT}Y_l 
+	& ~~\;=~~\;
+	\frac{0.6}{g_*^{1/2}}\, 
+	\frac{\omega\,\Mpl}{T^2}\,
+	\lgr g_l (\,Y_l~+~6\,\eta_l\,T\,) ~~+~~ 
+	     g_b (\,Y_b~+~6\,\eta_b\,T\,)  \rgr 
+	\;~~%+
+	\\
+% second line
+	& \;~~+~~\;  
+	\frac{0.6\,\pi^2}{g_*^{1/2}}\, 
+	\frac{\gamma\,\Mpl}{M_R^2}\,
+	\cdot (\, Y_l ~+~ 6\,\eta_l\,T\,)\\
+% third line
+	g_B \frac{d}{dT}Y_b 
+	& ~~\;=~~\;
+	\frac{0.6}{g_*^{1/2}}\, 
+	\frac{\omega\,\Mpl}{T^2}\,
+	\lgr g_l (\,Y_l~+~6\,\eta_l\,T\,) ~~+~~ 
+	     g_b (\,Y_b~+~6\,\eta_b\,T\,)  \rgr .
+	~~,
+\end{split}
+%\right.
+\end{equation}
+	The quantity of the ultimate interest is the baryon asymmetry 
+	at the present time (normalized, e.g. on the photon number density,
+	$ n_\gamma = s / 7.04 $ \cite{Kolb:1990vq}). 
+	Using $ s = \frac{2\pi^2}{45} g_* T^3 $, one can express the experimentally measured 
+	baryon to photon ratio via the asymmetry $Y_{b}$ that enters \eqref{eqn_Y},
+\begin{equation}
+\label{def_asy}
+	\mathfrak{a}_B ~~=~~ 7.04\, \frac{45}{\pi^4}\, \frac{g_B}{g_*}\, Y_B
+	~~\simeq~~ 0.6 \, Y_b 
+		~~\equiv~~ (\, 6.1 ~\pm~ 0.3 \,)\times 10^{-10}~,
+\end{equation}
+where we  use $g_B= $ and $g_* = $. 
+
+	Note, that in the limit when the rate of sphaleron processes
+	is very small, $ \Gsph \ll \Gamma_L $ ($ \Gamma_L $ is the rate
+	of the lepton number violating processes), one can solve the kinetic equations
+	exactly. 
+	Taking $ \omega = 0 $ in \eqref{eqn_Y}, we have:
+%	Then the kinetic equation takes the simple form
+\begin{equation}
+\label{btz_simple}
+	\frac{d}{dT}Y_l ~~=~~ \frac{\lambda\,\Mpl}{M_R^2} \,
+			\lgr Y_l ~+~ 6\,\eta_l\, T \rgr~.
+\end{equation}
+	where we have introduced $
+	\lambda ~~=~~ 0.6\, \pi^2
+    		         (g_*^{1/2}\, g_l)^{-1}\,\gamma$. 
+	%	The general solution for \eqref{btz_simple} is
+%\[
+%	Y_L^{(\rm g)} ~~=~~ -\,\frac{6\,\eta_L\,M_R^2}{\lambda\,\Mpl}
+%		~-~ 6\eta_L\,T ~+~
+%		A\cdot e^{\frac{\lambda\, \Mpl}{M_R^2}\, T}~,
+%\]
+%	with an arbitrary constant $ A $.
+%	Requiring $ Y_L $ to stay close to its equilibrium value 
+%	$ - 6\eta_L T $ at high temperatures one has to 
+% presume that 
+%	put $ A = 0 $:
+A solution that corresponds to $n_l$ close to equilibrium value at $T\gg T_R$ has the following form:
+\begin{equation}
+\label{btz_sol_simple}
+	Y_l ~~=~~ -\,6\,\frac{\eta_l\,M_R^2}{\lambda\,\Mpl}
+		~-~ 6\eta_l\,T ~,
+\end{equation}
+%	(one might worry why we have been able to obtain a special
+%	solution of equation \eqref{btz_simple} without essentially giving it
+%	any input data; note, however, that in the sense of leptogenesis
+%	the solution \eqref{btz_sol_simple} still has an arbitrary
+%	constant $ M_R $ which has to be fixed).
+	which provides us with the expression for the lepton asymmetry:
+\begin{equation}
+\label{Y_L_simple}
+	Y_l^{\rm fr} ~~=~~ -\, 6\,\frac{\eta_l\,M_R^2}{\lambda\,\Mpl}~.
+\end{equation}
+%Now, Eq.~\eqref{btz_sol_simple} provides us with the freeze-out
+%	temperature
+%\begin{equation}
+%\label{T_R}
+%	T_R ~~\sim~~ \frac{M_R^2}{\lambda\,\Mpl}~,
+%\end{equation}
+%	as well as with an 
+	%Temperature $ T_R $ is the one at which the Hubble rate equals 
+	%the L-process rate, as it was expected (see Section~\ref{intro}).
+%	This is of course the temperature at which the Hubble rate equals 
+%	the L-process rate.
+%	We emphasize that \eqref{Y_L_simple} is only an estimate, 
+%	and one needs a more careful numerical analysis for the final
+%	result.
+%	In any case, it is not $ Y_L $ that is of interest, but, rather,
+%	the corresponding baryon asymmetry $ Y_B $.
+	The inclusion of sphalerons will diffuse approximately
+	half of the lepton number yield into the baryon number
+\cite{Kuzmin:1985mm}, so that Eq.~\eqref{Y_L_simple} is also an estimate for the BAU.
+	
+%	This answer, however, was obtained under the assumption that
+%	the sphaleron rate was much less than the rate of 
+%	neutrino-mediated processes during the epoch of leptogenesis.
+%	In general, one notices that  there can be three different scenarios, 
+%	depending on the relative magnitudes of $ T_R $ and $ \Tsph $, the 
+%	temperature at which sphaleron processes become rapid.
+%	The first case, when $ T_R \gg \Tsph $ has just been discussed
+%	and the answer given by \eqref{Y_L_simple}.
+%	{\bf *** I stopped editing here}
+
+%	One then is faced with three possible developments of the scenario.
+%	The first one appears if $ \Tsph $, the temperature at which
+%	sphaleron processes become rapid, is considerably lower than $ T_R $.
+%%	As is well-known, the sphalerons turn half of the lepton number
+%%	into baryon number.
+%	In this case, during the leptogenesis epoch, 
+%	i.e. at $ M_R > T > T_R $,
+%	the sphalerons were very slow and could essentially be dropped 
+%	from consideration,
+%	thus leaving one with \eqref{Y_L_simple} as the lepton number yield.
+%	Below $ T_R $, the lepton number stayed constant, as the 
+%	lepton-flipping processes were too slow to keep equilibrium.
+%	And, finally, at $ \Tsph $, the sphalerons kicked in and diffused
+%	half of the lepton number \eqref{Y_L_simple} into the baryon number.
+
+%	The second possibility arises if the sphaleron epoch partially
+%	overlaps the leptogenesis epoch, i.e. if $ \Tsph \gtrsim T_R $.
+%	Strictly speaking, it is not quite correct to give direct
+%	estimates for this case, as the expression \eqref{T_R} for $ T_R $
+%	was derived under an assumption that sphalerons decouple.
+%	It is clear, however, that one can still use \eqref{T_R} for
+%	qualitative estimates, since it gives the temperature at which
+%	the rate of L-processes became slower than the Hubble rate.
+%	If $ \Tsph $ happens to be enough greater than $ T_R $, there
+%	existed a period during which both processes were in equilibrium.
+%	[{\it
+%	Qualitatively, one can estimate the resulting BAU as follows.
+%	Fast lepton-switching processes kept the lepton number around
+%	its equilibrium, while sphalerons brought the baryon number to
+%	the same level.
+%	Indeed, sphalerons do not change $ B - L $. 
+%	Since heavy-neutrino-mediated processes changed $ L $ 
+%	(and did not touch $ B $), the sphalerons had to adjust $ B $ 
+%	accordingly. 
+%	At temperature $ T_R $, the ``leptogenesis'' stopped, 
+%	the lepton number froze at the level estimated by \eqref{Y_L_simple},
+%	and the BAU must have been of the same level. 
+%	}]
+%	To estimate the resulting BAU it is easier to switch to the
+%	basis of $ B + L $ - and $ B - L $ -violating operators.
+%	In this language, L-processes generate both  $ B + L $ and $ B - L $:
+%\[
+%	Y_{B-L} ~\simeq~ \frac 12 (\eta_B - \eta_L ) \cdot T_R~,\qquad
+%	Y_{B+L} ~\simeq~ \frac 12 (\eta_B + \eta_L ) \cdot T_R~.
+%\]	
+%%	Sphalerons then wash out $ Y_{B+L} $, yielding the BAU to be
+%	$ \frac 12 (\eta_B - \eta_L ) \cdot T_R $.
+%	Note that $ \eta_L $ gives the same contribution here as in the 
+%	first case.
+%	Opposite to $ \eta_B $, which did not contribute in the first case
+%	due to the absence of B-flipping processes.
+	
+%	The third case corresponds to $ \Tsph \approx T_R $.
+%	Then there was no epoch during which both processes
+%	were in equilibrium, and in this sense this case is more complicated.
+%	However, to get an estimate, the reasoning can be 
+%	the same.
+%	Whatever $ B $ and $ L $ at $ T = \Tsph $ were, the resulting
+%	lepton and baryon asymmetry after the sphaleron epoch only
+%	depended on the input $ B - L $.
+%	Of course, since L-processes only changed the lepton number,
+%	this $ B - L $ at  $ T \sim \Tsph \approx T_R $ can 
+%	again be estimated by \eqref{Y_L_simple}.
+%	It is clear, however, that this argument is rather crude and 
+%	one needs a more direct numerical analysis to obtain an actual
+%	number.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        BARYON ASYMMETRY OF THE UNIVERSE: SUPPLY AND DEMAND  
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The strength of $CPT$ violation derived from BAU}
+
+%	To see which situation is more realistic, one needs an estimate
+%	for $ T_R $. 
+
+In this section, we provide the numerical solutions to equations \eqref{eqn_Y},
+determine the required strength of $CPT$ violation and confront it with 
+existing experimental constraints.
+
+To solve the system of kinetic equations, one has to add proper initial conditions.
+	It is reasonable to impose these initial conditions at the temperatures
+	where the essential part of leptogenesis begins, which we
+	take to be $ M_R = 10^{15}~\GeV $:
+	\begin{eqnarray}
+	Y_l\bigl|_{M_R} & ~~=~~ Y_l^{\rm eq}, \\
+	Y_b\bigl|_{M_R} & ~~=~~ 0~. \nonumber
+\end{eqnarray}
+	At high temperatures leptons and antileptons were in thermal and chemical equilibrium, which
+	had a nonzero value of the lepton number defined by $ \eta_l $.
+	This choice is quite sensible since 
+	the freeze-out temperature $ T_R $ suggested by neutrino masses 
+    is sufficiently smaller than $ M_R $.
+%	Even if one starts off out of equilibrium, the fast L-processes
+%	will quickly bring the system back into it.
+%	Consequently, if we take the initial leptogenesis temperature
+%	to be some $ T ~=~ M ~>~ M_R $, then at $ T~=~M_R $ one would
+%	still have equilibrium in the lepton sector, so the above
+%	choice of the leptogenesis temperature is quite justified.
+	As for baryons, we impose symmetric $n_b=n_{\bar b}$ conditions 
+	at high temperatures ($10^{15}$ GeV), as there are no fast processes that would bring 
+$Y_b$ to the equilibrium position set by  $\eta_b$.
+%are less legitimate to assume them to be in
+%	equilibrium, since at those times there were no baryon number
+%	violating processes to maintain it.
+%	Theoretically their initial asymmetry could have been arbitrary,
+%	but aesthetically it is more natural to assume it zero
+%	(otherwise the whole problem of obtaining a non-zero BAU would
+%	not be much contented):
+
+Since we chose to fix $M_R$, the only free parameters left are 
+$\eta_i$ and $\eta_b$ parametrizing the strength of $CPT$ violation, 
+and the neutrino Yukawa couplings. 
+%	This temperature depends on $ M_R $ and, through \eqref{gamma},
+%	on the Yukawa couplings for heavy neutrinos, which together 
+%	combine into the Dirac masses of the light neutrinos:
+%\begin{equation}
+%\label{T_R_eff}
+%	T_R  ~~\propto~~ \frac{M_R^2}{\Mpl \lgr \sum |h_a|^2 \rgr^2}
+%		~~\equiv~~ \frac{v^4}{\Mpl (\meff)^2}~,
+%\end{equation}
+For the latter there is some natural range suggested by the 
+oscillations among the light neutrino flavors. 
+Introducing an ``effective'' neutrino mass that the kinetic equations 
+\eqref{eqn_Y} depend on,
+\begin{equation}
+	\meff \equiv \left( \sum m_{\nu_i} \right)^{1/2}~~=~~ \left(\frac{\sum |Y^\nu_{\rm diag}|^2v^2}{2M_R}\right)^{1/2},
+\end{equation}
+we notice that $(\meff)^2$ is larger than any of the individual $\Delta m^2_{ij}$ measured 
+in the oscillations experiments. Thus, taking the largest of $\Delta m^2_{ij}$ suggested by 
+the oscillation of atmospheric neutrinos, $
+	 \sqrt{\Delta m_{\rm atm}^2} \simeq 0.05$ eV
+we find the following natural range for $\meff$:
+\begin{equation}
+\label{range_m}
+	0.05~\eV\leq \meff\leq~~ 0.65~\eV~,
+\end{equation}
+where the lower limit comes from the cosmological
+	bound on the sum of neutrino masses (refs). 
+	Definging the freeze-out temperature via relation
+	$\Gamma_H(T_R)=\Gamma_L(T_R)$, one can translate 
+	\eqref{range_m} to the realistic range of $T_R$:
+		\begin{equation}
+	10^{12}~\GeV ~~<~~ T_R ~~<~~ 10^{14}~\GeV~.
+\end{equation}
+	{\em please check the range}
+		On the lower end of this range $ T_R $ overlaps with the 
+	sphaleron ignition temperature $ \Tsph $, which is estimated
+	to be of the order $ 10^{12}~\GeV $ \cite{Buchmuller:2005eh}.  
+	%The biggest contribution to the asymmetry is expected in the case
+	%when the L-processes freeze out early. 
+	%Note that the denominator in \eqref{T_R_eff} is dominated by the mass
+	%of the heaviest neutrino.
+	%It is clear that in order to make $ T_R $  attain its minimal
+	%value one has to apply the biggest estimates on the neutrino masses.
+	%Thus one is interested in the highest of the lower limits on
+	%$ \meff $.
+	%In particular, $ \meff $ cannot be smaller then the atmospheric limit
+	%on the neutrino mass difference $ \sqrt{\Delta m_{\rm atm}^2}$:
+
+
+
+
+%	As the freeze-out temperature appears to be slightly greater
+%	than $ \Tsph $ and 	
+%	it is most likely then, that there was no period when
+%	both sphalerons and L-processes were active, but at the same
+%	time, there was no significant separation between the characteristic 
+%	temperatures of their activity.
+%	That means that neither of the processes can be neglected,
+%	and corresponds to the third scenario introduced above.
+
+	
+
+%\subsection{Account for the sphaleron rate}
+%
+%	We now turn to Eq.\eqref{T_R}, which determines the time when
+%	the lepton-flipping processes became slower than the Hubble
+%	rate.
+%	To get an upper limit on $ T_R $, one can use the atmospheric
+%	limit on neutrino masses, $ m_\nu^i > 0.05~\eV $ 
+%	to estimate the ratio $ M_R^2 / Y^4 $.
+%	For $ M_R \sim 10^{15}~\GeV $ one obtains temperature $ T_R^{max} $ 
+%	of the order $ 10^{13}~\GeV $.
+%	To get a lower limit on $ T_R $, one can use the cosmological
+%	bound on total neutrino masses
+%\[
+%	\sum (m_i)^2 ~~\leq~~ (0.65~\eV)^2~,
+%\]
+%	which yields $ T_R^{min} $ of the order of $ 10^{11}~\GeV $. 
+%	It is estimated that $ \Tsph \sim 10^{12}~\GeV $ [ref]. 
+%	One can see that typical values of parameters at best 
+%	lead to $ T_R $ being slightly greater than $ \Tsph $.
+%	It is most likely then, that there was no period when
+%	both sphalerons and L-processes were active, but at the same
+%	time, there was no separation between the characteristic 
+%	temperatures of their activity.
+%	That means that neither of the processes can be neglected,
+%	what corresponds to the third scenario introduced above.
+%%	One can see that reasonable parameters yield the third scenario
+%%	described above.
+%	To obtain a quantified prediction for BAU one certainly needs
+%	to consider carefully both sphaleron processes and L-processes
+%	in the kinetic equations.
+%
+%	For our purposes it will be sufficient to use the linear
+%	temperature dependence approximation of the sphaleron rate [ref]. 
+%	The general effect of sphalerons is to partly wash-out $ B + L $,
+%	while keeping $ B - L $ intact.
+%	Schematically, the sphaleron contribution to the Boltzmann equation
+%	for $ n_L $, $ n_B $ is [KRS,Moore]:
+%\begin{equation}
+%\label{sph_corr}
+%	\frac{d}{dt}\, n_B~,~~
+%	\frac{d}{dt}\, n_L
+%	~~~\supset~~~ -\, \Gsph 
+%		\lgr   n_B - n_B^\eq \;~+~\;
+%		       n_L - n_L^\eq 
+%		\rgr~,
+%\end{equation}
+%	where
+%\[
+%	\Gsph ~~\simeq~~ \omega\, T~, \qquad\qquad 
+%	{\rm ~with~}
+%	\omega ~\simeq~ \,10^{-5}~.
+%\]
+%%\[
+%%	\Gsph ~~\simeq~~ \frac{39}{4}\,\omega T~, \qquad\qquad 
+%%	{\rm ~with~}
+%%	\omega ~~\simeq~~ \,10^{-6}~.
+%%\]
+%%	One then includes the account for the sphaleron rate \eqref{sph_corr}
+%%	into the kinetic equations \eqref{kinetic_eqn_prelim}.
+%%	Also, one has to add similar equations for the baryon density $ n_B $.
+%%	Instead of working with the measures of asymmetry $ Y_L $ and 
+%%	 $ Y_B $ it is technically more convenient to introduce the
+%%	deviation from equilibrium $ \Upsilon_{L,B} $:
+%%\[
+%%	\Upsilon_i ~~=~~ Y_i ~-~ \theta_i T ~~=~~ \mu_i/T~,
+%%	\qquad\qquad i~=~L,B~.
+%%\]
+%%	(now that we are tracking both lepton and baryon numbers 
+%%	simultaneously, we have to explicitly indicate which quantites
+%%	are related to which sector, and therefore we will be appending
+%%	a subscript L or B where appropriate).
+%%	In terms of $ \Upsilon_{L,B} $
+%%	the kinetic equations can be written in a more symmetric way:
+%
+%	One then includes the account for the sphaleron rate \eqref{sph_corr}
+%	into the kinetic equations \eqref{kinetic_eqn_prelim}:
+%\begin{equation}
+%\label{eqn_ups}
+%\left\{~~
+%\begin{split}
+%% first line
+%	g_L Y_L' 
+%	& ~~\;=~~\;
+%	\frac{0.6}{g_*^{1/2}}\, 
+%	\frac{\omega\,\Mpl}{T^2}\,
+%	\lgr g_L (\,Y_L~+~6\,\eta_L\,T\,) ~~+~~ 
+%	     g_B (\,Y_B~+~6\,\eta_B\,T\,)  \rgr 
+%	\;~~+
+%	\\
+%% second line
+%	& \;~~+~~\;  
+%	\frac{0.6}{g_*^{1/2}}\, 
+%	\frac{\gamma\,\Mpl}{M_R^2}\,
+%	\cdot (\, Y_L ~+~ 6\,\eta_L\,T\,)\\
+%% third line
+%	g_B Y_B' 
+%	& ~~\;=~~\;
+%	\frac{0.6}{g_*^{1/2}}\, 
+%	\frac{\omega\,\Mpl}{T^2}\,
+%	\lgr g_L (\,Y_L~+~6\,\eta_L\,T\,) ~~+~~ 
+%	     g_B (\,Y_B~+~6\,\eta_B\,T\,)  \rgr 
+%	~~.
+%\end{split}
+%\right.
+%\end{equation}
+%
+%%\begin{equation}
+%%\label{eqn_ups}
+%%\left\{~~
+%%\begin{split}
+%%% first line
+%%	\delta_L \lgr \Upsilon_L' ~~+~~ \theta_L \rgr
+%%	& ~~\;=~~\;
+%%	2\, \alpha\chi \Mpl \cdot T^{-2} 
+%%	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
+%%	\;~~+~~\;
+%%	2\, \alpha\gamma\, \frac{\Mpl}{M_R^2} \cdot \Upsilon_L \\
+%%% second line
+%%	\delta_B \lgr \Upsilon_B' ~~+~~ \theta_B \rgr
+%%	& ~~\;=~~\;
+%%	2\, \alpha\chi \Mpl \cdot T^{-2} 
+%%	\lgr \delta_L \Upsilon_L ~~+~~ \delta_B \Upsilon_B \rgr 
+%%	~~.
+%%\end{split}
+%%\right.
+%%\end{equation}
+%%	This is a purely technical simplification, since
+%	The quantity of interest is the baryon asymmetry normalized on the
+%	photon number density at the present time, which can be expressed
+%	in terms of $ Y_B $,
+%\begin{equation}
+%\label{def_asy}
+%	\mathfrak{a}_B ~~=~~ 7.04\, \frac{45}{\pi^4}\, \frac{g_B}{g_*}\, Y_B
+%	~~\simeq~~ Y_B 
+%		~~\equiv~~ (\, 6.1 ~\pm~ 0.3 \,)\times 10^{-10}~.
+%\end{equation}
+%
+%	One now has to solve system \eqref{eqn_ups} numerically.
+%	It is reasonable to impose initial condition at the temperatures
+%	where the essential part of leptogenesis begins, which we
+%	take to be $ M_R = 10^{15}~\GeV $.
+%	At these temperatures, leptons were in their equilibrium, which
+%	had a nonzero value of the lepton number defined by $ \eta_L $.
+%	As we have seen, this hypothesis is quite sensible since 
+%	the freeze-out temperature $ T_R $ is sufficiently smaller than
+%	$ M_R $.
+%	Even if we start off out of equilibrium, the fast L-processes
+%	will quickly bring the system back into it.
+%	Consequently, if we take the initial leptogenesis temperature
+%	to be some $ T ~=~ M ~>~ M_R $, then at $ T~=~M_R $ one would
+%	still have equilibrium in the lepton sector, so the above
+%	choice of the leptogenesis temperature is quite justified.
+%
+%	As for baryons, we are less legitimate to assume them to be in
+%	equilibrium, since at those times there were no baryon number
+%	violating processes to maintain it.
+%	Theoretically their initial asymmetry could have been arbitrary,
+%	but aesthetically it is more natural to assume it zero
+%	(otherwise the whole problem of obtaining a non-zero BAU would
+%	not be much contented):
+%\begin{align*}
+%	Y_L\bigl|_{M_R} & ~~=~~ \theta_L\, M_R~, \\
+%	Y_B\bigl|_{M_R} & ~~=~~ 0~.
+%\end{align*}
+		
+
+
+
+%	We set up the problem inverse to the Cauchy problem:
+
+
+%	given the present-time baryon abundance \eqref{def_asy},
+The final result of our analysis is the prediction for the 
+strength of $CPT$ violation in lepton and baryons sectors. 
+Since equations \eqref{eqn_Y} are linear in $ Y_i $,
+	it is sufficient to solve them numerically for two cases
+\[
+	\eta_l \neq 0,~~\eta_b = 0~~~~~ {\rm and}~~~~~ \eta_l = 0,~~\eta_b \neq 0~,
+\]
+	and then using the experimental value of BAU, fix the values of $ \eta_l $ and $ \eta_b $ 
+	as  functions of $\meff$. 
+	
+	\begin{figure}
+\includegraphics[width=9cm,angle=270]{scan_log.ps}
+\caption{$CPT$-odd parameters $ \eta_l $, $ \eta_b $ necessary to generate
+	the observed BAU versus the sum of the neutrino masses.
+	The left vertical line indicating the value of $ m_\nu $ suggested by the oscillation of atmospheric
+neutrinos and the right vertical line showing the cosmological upper 
+	bound on $ m_\nu $ {\bf ref} bound the phenomenologically viable domain of $\meff$. {\em Pasha, on the plot 
+multiply eta by a GeV to make it dimensionless. One of the etas needs a minus}}
+\label{scan_fig}
+\end{figure}
+	
+Fig.~\ref{scan_fig} exhibits the resulting dependence of $\eta_i$ on $\meff$ within a phenomenologically
+	viable range of $ \meff $ bounded by two vertical dashed lines.
+	One notices that $ \eta_b$ does not change much in the ``physical'' region.
+	For $ \eta_l $-dominated scenario, in contrast, the increase of $\eta_l$ with 
+%	$ \meff $ defines the decoupling temperature
+	$ \meff $ is well pronounced. As expected, the lower mass $\meff$ leads to a 
+{\em higher} freeze-out temperature $T_R$, and thus lower $\meff$ requires {\em lower}
+$CPT$ violating parameter $\eta_l$ to get an observed value of BAU. Also not surprisingly, $\eta_l$ and 
+$\eta_b$ required to reproduce BAU in our scenario have opposite signs. 
+	
+The lower end of range \eqref{range_m} corresponds to a hierarchical 
+scenario $m_1^2,m_2^2 \ll m_3^2$, with the tau-neutrino being the heaviest. 
+The size of the $CPT$ violation suggested by the $CPT$-odd leptogenesis 
+in this case is found to be
+\begin{eqnarray}
+\label{main_result}
+\eta_l = ,~ \eta_b = 0~~~~~~~ {\rm or} ~~~~~~~ \eta_l = 0, ~\eta_b = 
+\end{eqnarray}
+This is the main prediction of our work. 
+
+
+%defining in terms of the decoupling temperature
+%	and the production rate of asymmetry.
+%%	Thus, in different regions of the plot on Fig.~\ref{scan_fig}, $ \eta_L $
+%	and $ \eta_B $ compete in production ``efficiency''.
+%	At large values of $ \meff $, the $ \eta_L $-generated asymmetry 
+%	(Fig.~\ref{l_dom_asymm_bau}) tracks the equilibrium curve for too long.
+%	The $ \eta_B $-generated asymmetry 
+%	(Fig.~\ref{b_dom_asymm_bau}), on the other hand, 
+%	always overshoots the equilibrium, and as a result $ \eta_L $ loses
+%	to $ \eta_B $ in efficiency.
+%	In contrast, at small $ \meff $, $ Y_L $ wins by decoupling early 
+%	from the ever-decreasing equilibrium value. 
+%	The $ \eta_B $-scenario in this case is much less efficient due to large
+%	freeze-out temperature $ T_R $.
+%	big enough to generate the present-time baryon 
+%	abundance \eqref{def_asy}.
+%		Qualitative features of the solution of Eq.~\eqref{eqn_Y} can
+%	be inferred only in an assumption of small sphaleron rate,
+%	which unfortunately is only approximately true.
+%	The first case should be close to the scenario considered in
+%	Section~\ref{rates}  --- 
+%	leptons freeze out, and at lower temperatures get converted
+%	into baryons. 
+%	The resulting BAU thus should weakly depend on the sphaleron
+%	rate.
+%	For the second case, the sphaleron rate is more crucial, since
+%	only due to sphalerons the mutual lepto- and baryogenesis is
+%	made possible. 
+	
+
+%	We have fixed the parameter $ M_R $ of equations \eqref{eqn_ups},
+%	as the result evidently is very weakly dependent on it:
+%	provided that $ M_R \gg T_R $, the L-processes will quickly bring
+%	leptons into equilibrium which will be maintained down to
+%	$ T = T_R $.
+%	We have fixed the parameter $ M_R $ to be of the order of 
+%	$ 10^{15}~\GeV $.
+%	There is a parameter which is not strictly fixed,
+%	the ``effective'' neutrino mass $ \meff $, which enters
+%	through the
+%	L-processes rate $ \gamma $ (see Eq.~\eqref{gamma}),
+%	and which we allow to vary within the limits 
+%\[
+	%0.01~\eV ~~<~~ \meff ~~<~~1~\eV~.
+%	0.05~\eV ~~<~~ \meff ~~<~~0.65~\eV~.
+%\]
+	Figures ~\ref{l_dom_asymm_bau} and ~\ref{b_dom_asymm_bau} illustrate the 
+	case of $\meff=0.05$ eV in more detail, by showing the evolution of the baryon/lepton
+	asymmetry as a function of temperature. When $CPT$ violation is concentrated in the 
+lepton sector,  Fig.~\ref{l_dom_asymm_bau}, the lepton asymmetry follows the 
+equilibrium value of the (lepton)
+	asymmetry at high temperatures to freeze out below $10^{14}$ GeV.
+%	Due to this tracking of the equilibrium, the contribution of $ \eta_L $ 
+%	to the final asymmetry is suppressed relative to the that produced by the same 
+%	absolute value of $ \eta_B $.
+When $CPT$ violation is given by $\eta_b$, the asymmetry $ Y_b $ starts from zero, 
+    overshoots the equilibrium curve just above $10^{13}$ GeV, to freeze out
+	at lower temperatures. 
+
+
+\begin{figure}
+\includegraphics[width=9cm,angle=270]{l_dom_asymm_bau.ps}
+\caption{
+	Lepton asymmetry (solid line) and equilibrium lepton asymmetry (dashed line) 
+driven by $CPT$ violation in the lepton sector
+    for $\meff=0.05$ eV as function of temperature.
+	The amount of $CPT$ violation is fixed to $ \eta_L =  $ 
+	to yield the observed value of baryon asymmetry.
+	The final low-temperature plateau of $-Y_l$ equals to the baryon asymmetry $Y_b$. 
+	}
+\label{l_dom_asymm_bau}
+\end{figure}
+\begin{figure}
+\includegraphics[width=9cm,angle=270]{b_dom_asymm_bau.ps}
+\caption{Baryon asymmetry $ Y_b $ and equilibrium baryon asymmetry vs 
+	temperature with $CPT$ violation concentrated in  the baryon sector. The parameters  
+$\meff=0.05$ eV and $\eta_b = $ are chosen to match the observed asymmetry.}
+\label{b_dom_asymm_bau}
+\end{figure}
+
+\section{Comparison with experimental constraints on $CPT$ violation}
+
+	Now we are ready to confront our predictions for $CPT$-violation (\ref{main_result}) 
+with the experimental constraints on it. The modification of dispersion relation by 
+dimension five operators has been discussed at length in the literature. Below we 
+list a set of relevant contraints on dimension five operators in the 
+fermionic sector of the SM and comment on their applicability. \\
+\begin{center}
+	$|\eta_d-\eta_Q - 0.5(\eta_u-\eta_Q)| < 10^{-27}{\rm GeV}^{-1}$~~~~~~~~~\cite{Sudarsky:2002ue,MP:}\\
+	$|\eta_L|,~|\eta_E| < 10^{-23}{\rm GeV}^{-1}$~~~~~~~~~\cite{Jacobson:2005bg}\\
+	$|\eta_L|, ~|\eta_E| < 10^{-33}{\rm GeV}^{-1}$~~~~~~~~~\cite{Gagnon:2004xh}
+	\end{center}
+	The first constraint arises because the axial-vector-like combinations of $\eta_i$ in the quark sector 
+	lead to the coupling of the nucleon spin to a preferred direction. In models where the 
+	preferred frame is associated with the rest frame of the cosmic microwave background, the net spin energy shift 
+is proportional to the velocity of the lab frame $v\sim O(10^{-3})$, $\Lambda_{QCD}^2\eta_i(v\cdot s)$, 
+which is to be compared with 
+the experimental sensitivity $10^{-31}$ GeV \cite{clock1,clock2}. The low-energy constraints on lepton 
+operators are considerably weaker \cite{MP:}.
+The strongest constraints on dimension five 
+$CPT$-odd operators in the lepton sector comes from considerations of $p\to p l\bar l$ processes that become 
+energetically allowed and prevent acceleration of protons to energies of $\sim 10^{21}$ eV. It is important 
+that constraints \cite{Gagnon:2004xh} are double-sided, which is the consequence of asymmetric modification 
+of dispersion relation for leptons and antileptons \eqref{modifiedE}. 
+
+The strength of $CPT$ violation in the lepton sector 
+derived from the baryon asymmetry \eqref{main_result} is consistent with the strophysical bounds on 
+$CPT$-violating QED \cite{Jacobson:2005bg}, but appears to be grossly inconsistent with \cite{Gagnon:2004xh}.
+In fact, typical constraints on dimension five operators \cite{Gagnon:2004xh} derived from the existence of 
+the high-energy cosmic rays appear to destroy any hopes for the $CPT$-odd baryogenesis, even if the 
+scale of $T_R$ is pushed all the way up to the Planck scale.  It is easy to see, however, that this is 
+not the case. If  $CPT$-odd sources in the quark sector dominate over the lepton sources by a factor of 
+20-30, strong constraints on $CPT$ violation might be avoided. If, for example, among the 
+$CPT$-odd sources the right-handed up quark has the largest modification of its dispersion relation, 
+the energetically favored process $p\to \Delta^{++}\pi^-$ allows the ultra high-energy cosmic rays to exist in the 
+form of $\Delta^{++}$, an option which cannot be observationally ruled out \cite{Gagnon:2004xh}. 
+It is very important to observe that 
+the {\em negative} sign of $\eta_U$ suggested by BAU \eqref{main_result} is exactly the sign of $\eta_U$ 
+needed for $p\to \Delta^{++}\pi^-$ to happen at high energies.  
+Nevertheless, the required size of $\eta_U$, $\eta_U \sim - (10^{-23}-10^{-22})$GeV$^{-1}$
+appears to be in sharp conflict with the low-energy constraints \cite{Sudarsky:2002ue,MP:}, and at least 
+four order of magnitude tuning for dimension five sources is needed. 
+This consideration shows an important complementarity between the
+astrophysical bounds on Lorentz violation and low-energy searches of the breakdown of rotational 
+invariance. 
+
+
+We can extend our analysis to theories where $CPT$ violation comes from operators of dimension 
+seven, nine, etc., should for some contrived reasons lower dimensional operators be absent. 
+%	We do not repeat the analysis of the kinetic equation 
+%	for this case.
+%	for the case of higher-dimensional operators.
+	We note that to sufficient accuracy, the resulting BAU
+	will be determined by the equilibrium lepton asymmetry
+	at the freeze-out time, $ \eta^{(7)}\,T_R^3 $, $ \eta^{(9)}\,T_R^3 $, 
+	%The presented analysis has only brought in more 
+	%detailed numerical answers, but it could not alter the fact that
+	%dimension five operators are incapable of carrying out successful
+	%baryogenesis.
+	where $\eta^{(n)}$ parameterize the strength of the higher dimensional operators:
+%	We can proceed iteratively, excluding higher-dimensional operators 
+%	one by one.
+%	Starting with dimension seven, the relevant LV part of the Lagrangian 
+%	is
+\[
+	\mc{L} ~~=~~ \sum \eta^{(n)}_{\kappa\mu...\nu}\,
+	\ov{\psi} \gamma^\kappa \md^\mu ...\md^\nu  \psi.
+\]
+%	An operator $ \eta^{(n)} $ of mass dimension $ n $ makes a CPT-odd contribution to
+%	the dispersion relations:
+%\begin{equation}
+%\label{disp_rel_n}
+%	E ~~=~~ p ~+~ \frac 12 m^2/p ~+~ \frac 12 \eta^{(n)} p^{n-3}~,
+%\end{equation}
+%	which, in their turn shift the equilibrium number density:
+%\[
+%	n_B^\eq ~~=~~ n_B^0 \cdot \left(\, 1 ~-~ \frac{(n-1)!}{4} \eta^{(n)} T^{n-4}
+%					\,\right)~.
+%\]
+%	This allows us to find the freeze-out value of the baryon asymmetry:
+%\begin{equation}
+%\label{Y_B_n}
+%	Y_B ~~\sim~~ -\, \frac{(n-1)!}{4} \, \eta^{(n)} \,T^{n-4}_R~.
+%\end{equation}
+As before, the transmutation to lower-dimensional operators can be totally forbidden 
+by the irreducibility of $\eta^{(n)}$ tensors. 
+
+The low-energy constraints on dimension seven and higher $CPT$-odd operators 
+are totally irrelevant, as the possible influence on the nucleon spin is 
+suppressed by extra power(s) of $(\Lambda_{QCD}/\Lambda_{CPT})^2$.  The constraints 
+coming from the propagation of the high-energy cosmic rays are harder to avoid, as their 
+relative strength scales down as $(E_{max}/\Lambda_{CPT})^2$, where $E_{max}$ is the maximal 
+energy of the high-energy cosmic rays $E_{max}\sim 10^{12}$ GeV. In fact, since the decoupling
+temperature $T_R$ can only be  marginally larger than $10^{12}$ GeV, the $CPT$-violating 
+sources of dimension seven in the lepton sector allowed by the cosmic rays would not 
+be able to produce the required size of the baryon asymmetry. However, the same loophole 
+with the stability of $\Delta^{++}$ at high-energies 
+exists for the dimension seven operators, and the right-handed up-quark $CPT$ violation
+at the level of 
+\begin{equation}
+\eta^{(7)}_U = - [(10^{16}-10^{17})~ {\rm GeV}]^{-3}
+\end{equation}
+[{\em Pasha, check/refine this scale}] results in the right magnitude of BAU while avoiding all 
+experimental constraints on Lorentz and $CPT$ violation.  
+
+
+
+
+
+
+%	Such bounds will, however, be directly applicable only to higher-dimensional operators
+%	of the photon sector.
+%	If there is a CPT-odd operator $ \xi^{(n)}_{\kappa\lambda\mu...} $ in the 
+%	photon sector, it will modify dispersion relations of the photon similarly
+%	to \eqref{disp_rel_n}, where the modification will have different signs
+%	for photons of opposite polarizations.
+%	Ultra-high energy cosmic rays would then be kinematically allowed to
+%	emit photons and lose energy, and therefore not be observed.
+%	Existence of rays with energy about $ \Lray ~\sim~ 3\times10^{11}~\GeV $ then 
+%	puts a limit on $ \xi^{(n)} $:
+%\begin{equation}
+%\label{bound_xi_n}
+%	\xi^{(n)} ~~<~~ 
+%	2\, \left( \frac{m_p}{\Lray} \right)^2\, \left(\frac{2}{\Lray}\right)^{n-4}
+%	~~=~~
+%	\frac{2}{9}\, 10^{-22}\cdot 10^{-11(n-4)}~(\GeV)^{(4-n)}~.
+%\end{equation}
+%	We speculate that this limit, modulo loop factor, can be transferred on the 
+%	fermionic sector, by arguing that the existence of  non-zero $ \xi^{(n)} $ 
+%	should generate non-zero operator $ \eta^{(n)} $, which, in the absence of fine-tuning, 
+%	should respect the same bound.
+%
+%	Substituting \eqref{bound_eta_n} into \eqref{Y_B_n} and then into 
+%	\eqref{def_asy} one then obtains
+%\begin{align}
+%\notag
+%	\mathfrak{a}_B ~~<~~ 5 \times 10^{-22}\cdot \left [ \frac{T_R}{10^{11}~\GeV} 
+%							\right ]^{n-4}~.
+%	\\
+%\notag
+%	\text{\it Or is it better to have $\Eray$ instead of explicit numbers?}
+%\end{align}
+%\begin{align}
+%\notag
+%	\mathfrak{a}_B ~~\simeq~~ 0.6 \, Y_B
+%	~~<~~ 
+%		0.6 \times 2^{n-5} (n\,-\,1)!\, \frac{m_p^2\, T_R^{n-4}}{\Eray^{n-2}}~.
+%\end{align}
+
+%	The condition that this asymmetry should reach the observed value then translates
+%	into
+%\[
+%	n~~>~~X~.
+%\]
+%	Therefore, successful baryogenesis is only possible in the presence of LV operators
+%	starting from dimension XX, which of course is rather 
+% awkward and 
+%	unnatural to assume.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                            DISCUSSION
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+
+	We have seen that the presence of $CPT$-odd interactions is theoretically capable
+	of replacing \emph{two} of Sakharov's conditions of baryogenesis: non-conservation 
+	of $CP$ symmetry and departure from thermodynamical equilibrium.
+	The reason for this is that non-zero lepton (or baryon) asymmetry can develop even in 
+thermal equilibrium if  the $CPT$-violating shifts of dispersion relations for particles 
+and antiparticles and fermion number violating processes are operative at the 
+same time \cite{Dolgov:1981hv}. In this paper, we considered in detail the idea of 
+leptogenesis driven by $CPT$-violating sources in the fermionic sector of the 
+Standard Model. In this scenario, the generation of the $B-L$ number 
+occurs at temperatures of about $10^{12}-10^{14}$ GeV, which results in a huge enhancement of the 
+asymmetry as compared to the $CPT$-odd electroweak baryogenesis scenario, where $B-L=0$ and 
+the equilibrium value for $B+L$ is maintained until the electroweak breaking, $T\sim 100$GeV. 
+Consequently, the $CPT$-odd leptogenesis requires only trans-Planckian size of 
+$CPT$ violation, $\eta_i \sim 10^{-22}-10^{-24}$GeV$^{-1}$. 
+
+We believe that this is the minimal level 
+of $CPT$ violation required to reproduce the observable asymmetry. Lower levels of $CPT$-breaking 
+may generate BAU 
+only at the expense of  raising the decoupling temperature for $B-L$ processes, to the range of 
+the {\em e.g.} GUT scale. Models with such a high intitial temperature possess very serious cosmological 
+problems of their own related to the overproduction of dangerous relics (monopoles, gravitinos), and 
+are difficult to inncorporate with inflation. 
+
+
+
+   The most natural models of $CP$-odd leptogenesis require two heavy neutrino singlets
+   to work. We have shown that one species is perfectly sufficient for the $CPT$-odd scenario. 
+   In fact, one could take even more conservative approach and associate the majorana 
+   masses of light neutrinos with the effective Lorentz-conserving interaction \eqref{L_eff} without 
+   specifying its origin. The $CPT$-odd leptogenesis in this case will proceed exactly as 
+described in the paper, as long as \eqref{L_eff} remains unsuppressed at high energies. 
+As a consequence of  the reduced heavy sector, the 
+connection to the phenomenology of light neutrinos becomes more 
+direct. As shown, the rate of the lepton-number violating processes is 
+directly proportional to the sum of the mass squared of all light neutrino species. 
+	
+	Confronting the predicted size of $CPT$-violation with the existing experimental 
+	and astrophysical constraints we find that both the low-energy precision searches of preferred 
+	directions and the atrophysical constraints derived from the 
+existence of charged high-energy cosmic rays puts severe 
+	constraints on $CPT$-odd leptogenesis. The latter, being 
+especially stringent, rules out a possibility of $CPT$-odd leptogensis
+driven by $\eta_l$ when $\eta_b =0 $. The inverse case, $\eta_l=0;~\eta_b \neq0 $
+cannot be ruled out from the astrophysical considerations, as the bounds would not apply
+if {\em e.g.} the $CPT$ violation is concentrated in the right-handed up-quark sector. 
+In this case, however, one should expect  sizable effects in the clock comparison 
+experiments. Current sensitivity to such operators is at the level of $10^{-27}$GeV$^{-1}$, 
+and thus would require at least four orders of magnitude fine-tuning to make \eqref{main_result} 
+evade the bounds. 
+
+
+	
+	The $CPT$-odd interactions that modify dispersion relations 
+	represent a relatively small subset of dimension five $CPT$-odd interactions \cite{BP}. 
+	Is it feasible that other operators could  drive (baryo)leptogenesis while 
+evading strong astrophysical and laboratory constraints? If physics responsible for $CPT$ violation 
+preserves supersymmetry, operators that modify dispersion relations are simply not allowed 
+\cite{GrootNibbelink:2004za,Bolokhov:2005cj}. Instead, a different class of $CPT$-odd operators may appear: 
+\begin{equation}
+\bar L \gamma_\mu L H^\dagger H,~~\bar Q \gamma_\mu Q H^\dagger H, ~~{\rm etc}. 
+\label{alternative}
+\end{equation}
+When the lepton or 
+baryon number is calculated in equilbrium, such operators will create an 
+effective chemical potential that grows with temperature, $\mu \sim T^2\zeta$, where 
+$\zeta$ parametrizes the strength of $CPT$ violation. The easiest way to see that is to 
+consider the thermal field theory correlator between the baryon/lepton number density and 
+such $CPT$-odd operators. Inside thermal loop, the Higgs field bilinear will produce $T^2$,
+and the scaling of the effective chemical potential with temperature will be exactly the 
+same as in the case of $\eta_i$ operators. Although operators \eqref{alternative} do not influence 
+the propagation of the high-energy cosmic rays, they have a phenomenological "problem" of their own. 
+Inside loops such operators create quadratic divergencies and generate dimension three $CPT$-odd 
+operators proportional to the square of the ultraviolet cutoff. In the most UV-protected case, 
+the role of this cutoff is assumed by the supersymmetric soft-breaking scale. Still, the strength
+of typical constraints is on the order of $10^{-10}M_{\rm Pl}^{-1}$ 
+\cite{Bolokhov:2005cj}, making the 
+scenario driven by \eqref{alternative} fine-tuned below 1 ppm level. 
+Finally, what if $CPT$-violation is concentrated in the heavy right-handed neutrino sector? 
+Phenomenology of such model was addressed in \cite{Mocioiu:2002pz}, where it was shown that 
+loop effects reintroduce $CPT$ violation in the sector of charged leptons. 
+Upon integrating out heavy neutrino 
+fields, one produces operators similar to \eqref{alternative}, and therefore 
+such possibility is also fine-tuned. 
+
+Our main conclusion is that the natural levels of $CPT$/Lorentz violation 
+suggested by the $CPT$-odd (lepto)baryogenesis scenario are $10^{-3}-10^{-5}$
+in the Planck mass units, which is well within the ranges already disfavored by the laboratory experiments 
+and observations of the 
+high-energy cosmic rays. This analysis 
+relies on the spurion approach to $CPT$ violation, which assumes that the strength of the 
+$CPT$-odd source was essentially the same in the early Universe and today. 
+It is of course conceivable that the dynamical effects could have been responsible for the 
+$CPT$ breaking at high temperatures, sourcing the baryogenesis, with relaxation of $CPT$ sources to zero 
+at the later stage \cite{Cohen:1987vi}.
+
+{\bf Acknowledgements.} The authors would like to thank A. Ritz for useful discussions.
+This work is supported in part by the NSERC of Canada. Research at the Perimeter Institute 
+is supported in part by the Government
+of Canada through NSERC and by the Province of Ontario through MEDT. MP would like to thank 
+the Aspen Center for Physics, where part of this research project was carried out. 
+
+
+
+
+\bibliographystyle{apsrev}
+\bibliography{genesis}
+
+\end{document}
